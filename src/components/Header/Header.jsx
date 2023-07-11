@@ -3,9 +3,9 @@ import styles from "./Header.module.scss";
 
 const Header = () => {
   return (
-    <section>
+    <header>
       <h2>Header</h2>
-    </section>
+    </header>
   );
 };
 

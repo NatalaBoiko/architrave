@@ -3,9 +3,9 @@ import styles from "./Footer.module.scss";
 
 const Footer = () => {
   return (
-    <section>
+    <footer>
       <h2>Footer</h2>
-    </section>
+    </footer>
   );
 };
 
