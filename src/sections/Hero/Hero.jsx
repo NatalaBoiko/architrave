@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <section className={styles.hero} id="hero">
       <div className={styles.heroContainer}>
-        <Image
+        {/* <Image
           priority
           src={hero}
           alt="background hero"
@@ -17,7 +17,7 @@ const Hero = () => {
           layout="fill"
           objectFit="cover"
           objectPosition="center bottom"
-        />
+        /> */}
         <div className={styles.heroContent}>
           <h1 className={styles.heroTitle}>Творча майстерня АРХІТРАВ</h1>
           <p className={styles.heroText}>
