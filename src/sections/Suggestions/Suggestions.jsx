@@ -1,10 +1,21 @@
+import { suggestionsData } from "@/data/suggestionsData";
+import Image from "next/image";
 import React from "react";
 import styles from "./Suggestions.module.scss";
 
 const Suggestions = () => {
   return (
-    <section id="suggestions">
-      <h2>Suggestions</h2>
+    <section id="suggestions" className={styles.suggestions}>
+      <h2>Наші пропозиції</h2>
+      <ul className={styles.suggestionsList}>
+        {suggestionsData.map(({ id, src, alt }) => {
+          return (
+            <li key={id}>
+              <Image src={src} alt={alt} width={380} height={617} />
+            </li>
+          );
+        })}
+      </ul>
     </section>
   );
 };
