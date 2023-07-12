@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import React from 'react';
-import hero from 'public/heroBg.jpg';
-import styles from './Hero.module.scss';
+import Image from "next/image";
+import React from "react";
+import hero from "public/heroBg.jpg";
+import styles from "./Hero.module.scss";
 
 const Hero = () => {
   return (
-    <section className={styles.hero}>
+    <section className={styles.hero} id="hero">
       <div className={styles.heroContainer}>
         <Image
           priority

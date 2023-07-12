@@ -3,7 +3,7 @@ import styles from "./Suggestions.module.scss";
 
 const Suggestions = () => {
   return (
-    <section>
+    <section id="suggestions">
       <h2>Suggestions</h2>
     </section>
   );

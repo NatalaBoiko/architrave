@@ -3,7 +3,7 @@ import styles from "./Gallery.module.scss";
 
 const Gallery = () => {
   return (
-    <section>
+    <section id="gallery">
       <h2>Gallery</h2>
     </section>
   );

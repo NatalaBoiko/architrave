@@ -1,11 +1,11 @@
-import Image from 'next/image';
-import React from 'react';
-import styles from './About.module.scss';
-import skyscraper from 'public/skyscraper.jpg';
+import Image from "next/image";
+import React from "react";
+import styles from "./About.module.scss";
+import skyscraper from "public/skyscraper.jpg";
 
 const About = () => {
   return (
-    <section className={styles.about}>
+    <section className={styles.about} id="about">
       <h2 className={styles.aboutTitle}>Про нас</h2>
       <div className={styles.aboutContent}>
         <div className={styles.aboutList}>
