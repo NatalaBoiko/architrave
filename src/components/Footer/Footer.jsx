@@ -1,26 +1,28 @@
-import Link from "next/link";
-import React from "react";
-import styles from "./Footer.module.scss";
-import { Caveat } from "next/font/google";
+import Link from 'next/link';
+import React from 'react';
+import styles from './Footer.module.scss';
 
-const caveat = Caveat({
-  subsets: ["latin", "cyrillic"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
-
-const Footer = () => {
+const Footer = ({ caveat }) => {
   return (
     <footer className={styles.footer}>
       <Link
         href="https://webevery.dev/"
         target="_blank"
         rel="noopener noreferrer"
+        className={`${caveat.className} ${styles.title}`}
+      >
+        <h2 className={styles.animateCharcter}>webevery.dev</h2>
+        <p>made by</p>
+      </Link>
+      {/* <Link
+        href="https://webevery.dev/"
+        target="_blank"
+        rel="noopener noreferrer"
         className={caveat.className}
       >
-        <h2>webevery.dev</h2>
+        <h2 className={styles.animateCharcter}>webevery.dev</h2>
         made by
-      </Link>
+      </Link> */}
     </footer>
   );
 };
