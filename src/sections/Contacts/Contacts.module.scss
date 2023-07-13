@@ -1,0 +1,52 @@
+.contacts {
+  background-color: var(--contact_bg_color);
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.contactsTitle {
+  text-align: center;
+  color: var(--main_bg_color);
+  font-size: 16px;
+  letter-spacing: 0.88px;
+  @media screen and (min-width: 768px) {
+    text-align: start;
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: 2.2px;
+    margin-bottom: 42px;
+  }
+}
+
+.contactsContent {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.contactsList {
+  display: flex;
+  flex-direction: column;
+}
+
+.contactsMap {
+  width: 680px;
+  height: 412px;
+  border-radius: 86px;
+}
+
+.contactsAdress {
+  color: #fff;
+  text-align: center;
+  font-family: KoHo;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.88px;
+}
