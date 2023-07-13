@@ -69,27 +69,3 @@
   color: var(--accent_color);
   text-transform: uppercase;
 }
-
-.heroBtn {
-  width: 134px;
-  height: 32px;
-  color: #161616;
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 0.66px;
-
-  @media screen and (min-width: 768px) {
-    width: 220px;
-    height: 54px;
-    background-color: var(--accent_color);
-    border: none;
-    outline: none;
-    border-radius: 16px;
-    cursor: pointer;
-
-    font-size: 16px;
-    font-weight: 500;
-    color: var(--main_bg_color);
-    letter-spacing: 0.88px;
-  }
-}

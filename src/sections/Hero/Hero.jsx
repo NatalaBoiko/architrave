@@ -13,11 +13,7 @@ const Hero = () => {
           <p className={styles.heroText}>
             Creating comfort for <span className={styles.heroItem}>YOU</span>
           </p>
-          <Button
-            title="Залишити заявку"
-            type="button"
-            className={styles.heroBtn}
-          />
+          <Button title="Залишити заявку" type="button" />
         </div>
       </div>
     </section>
