@@ -10,7 +10,7 @@ const koho = KoHo({
 
 const caveat = Caveat({
   subsets: ["latin", "cyrillic"],
-  weight: ["400", "500", "600", "700", "variable"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata = {
