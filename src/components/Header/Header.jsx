@@ -1,16 +1,17 @@
-"use client";
-
 import React from "react";
-import Button from "../Button/Button";
-import styles from "./Header.module.scss";
-import { headerLincsArr } from "@/data/headerLincsArr";
-import Link from "next/link";
-import { handleScroll } from "@/helpers/handleScroll";
 import Image from "next/image";
+import styles from "./Header.module.scss";
+
+import { HeaderLinks } from "./HeaderLinks/HeaderLinks";
+import Button from "../Button/Button";
+// import { MobileMenu } from "./MobileMenu/MobileMenu";
+import { HeaderMenuBtn } from "./HeaderMenuBtn/HeaderMenuBtn";
 
 const Header = () => {
   return (
     <header className={styles.header}>
+      {/* <MobileMenu /> */}
+      <HeaderMenuBtn />
       <Image
         src="/logo.png"
         width={60}
@@ -18,25 +19,9 @@ const Header = () => {
         alt="logo"
         className={styles.logo}
       />
-      <ul className={styles.headerLinks}>
-        {headerLincsArr.map(({ id, title, href }) => {
-          return (
-            <li key={id}>
-              <Link href={href} scroll={false} onClick={handleScroll}>
-                {title}
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-      <Button
-        className={styles.btn}
-        type="button"
-        title="Напишіть нам"
-        onClick={() => {
-          console.log("the button is clicked");
-        }}
-      />
+
+      <HeaderLinks />
+      <Button className={styles.btn} type="button" title="Напишіть нам" />
     </header>
   );
 };

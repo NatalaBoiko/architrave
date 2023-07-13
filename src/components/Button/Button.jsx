@@ -1,12 +1,17 @@
+"use client";
+
 import React from "react";
 import styles from "./Button.module.scss";
 
-const Button = ({ className, title, type, onClick }) => {
+const Button = ({ className, title, type }) => {
   return (
     <button
       type={type}
       className={`${styles.button} ${className}`}
-      onClick={onClick}
+      // onClick={onClick}
+      onClick={() => {
+        console.log("the button is clicked");
+      }}
     >
       {title}
     </button>
