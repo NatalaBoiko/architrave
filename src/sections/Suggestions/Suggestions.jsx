@@ -11,7 +11,7 @@ const Suggestions = () => {
         {suggestionsData.map(({ id, src, alt }) => {
           return (
             <li key={id}>
-              <Image src={src} alt={alt} width={380} height={617} />
+              <Image src={src} alt={alt} fill={true} />
             </li>
           );
         })}
