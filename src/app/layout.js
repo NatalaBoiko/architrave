@@ -1,11 +1,16 @@
 import "./globals.scss";
-import { Inter, KoHo } from "next/font/google";
+import { KoHo, Caveat } from "next/font/google";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 
 const koho = KoHo({
   subsets: ["latin"],
   weight: ["200", "300", "400", "500", "600", "700"],
+});
+
+const caveat = Caveat({
+  subsets: ["latin", "cyrillic"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata = {
