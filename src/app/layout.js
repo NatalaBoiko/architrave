@@ -4,7 +4,7 @@ import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 
 const koho = KoHo({
-  subsets: ["latin"],
+  subsets: ["latin", "cyrillic"],
   weight: ["200", "300", "400", "500", "600", "700"],
 });
 
