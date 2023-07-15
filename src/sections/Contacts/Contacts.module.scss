@@ -1,0 +1,112 @@
+.contacts {
+  background-color: var(--contact_bg_color);
+  padding-top: 80px;
+  @media screen and (min-width: 768px) {
+    padding-bottom: 80px;
+  }
+}
+
+.contactsTitle {
+  text-align: center;
+  color: var(--main_bg_color);
+  font-size: 16px;
+  letter-spacing: 0.88px;
+  margin-bottom: 16px;
+  @media screen and (min-width: 768px) {
+    text-align: start;
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: 2.2px;
+    margin-bottom: 42px;
+  }
+}
+
+.contactsContent {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.contactsList {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  margin-bottom: 56px;
+  @media screen and (min-width: 768px) {
+    row-gap: 40px;
+    margin-bottom: 0px;
+  }
+}
+
+.contactsAdressContainer {
+  display: flex;
+  align-items: center;
+}
+
+.contactsIcon {
+  margin-right: 20px;
+  // margin-right: 105px;
+
+  @media screen and (min-width: 768px) {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid var(--main_bg_color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    // margin-right: 120px;
+  }
+}
+
+.contactsAdress {
+  color: var(--main_bg_color);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.88px;
+  font-style: normal;
+}
+
+.contactsMap {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  // width: 360px;
+  height: 252px;
+  border: none;
+  filter: grayscale(0%) invert(92%) contrast(78%);
+  // filter: grayscale(100%) invert(92%) contrast(83%);
+  @media screen and (min-width: 768px) {
+    width: 680px;
+    height: 412px;
+    border-radius: 30px;
+    // border-radius: 86px;
+  }
+  & iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+}
+
+// .contactsMap {
+//   width: 360px;
+//   height: 252px;
+//   border: none;
+//   filter: grayscale(0%) invert(92%) contrast(78%);
+//   // filter: grayscale(100%) invert(92%) contrast(83%);
+//   @media screen and (min-width: 768px) {
+//     width: 680px;
+//     height: 412px;
+//     border-radius: 30px;
+//     // border-radius: 86px;
+//   }
+// }
