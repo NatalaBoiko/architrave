@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 
 import styles from "./HeaderMenuBtn.module.scss";
@@ -14,6 +14,7 @@ export const HeaderMenuBtn = () => {
         width={16}
         height={16}
         className={styles.mobileMenu}
+        onClick={openMenu}
       />
     </>
   );
