@@ -24,9 +24,11 @@
 .contactsContent {
   width: 100%;
   display: flex;
-  align-items: center;
   flex-direction: column;
-  @media screen and (min-width: 768px) {
+  // @media screen and (min-width: 768px) {
+
+  @media screen and (min-width: 1224px) {
+    align-items: center;
     flex-direction: row;
     justify-content: space-between;
   }
@@ -37,7 +39,9 @@
   flex-direction: column;
   row-gap: 24px;
   margin-bottom: 56px;
-  @media screen and (min-width: 768px) {
+  // @media screen and (min-width: 768px) {
+
+  @media screen and (min-width: 1224px) {
     row-gap: 40px;
     margin-bottom: 0px;
   }
@@ -82,7 +86,8 @@
   border: none;
   filter: grayscale(0%) invert(92%) contrast(78%);
   // filter: grayscale(100%) invert(92%) contrast(83%);
-  @media screen and (min-width: 768px) {
+  // @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1224px) {
     width: 680px;
     height: 412px;
     border-radius: 30px;
