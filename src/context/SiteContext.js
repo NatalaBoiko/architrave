@@ -1,13 +1,11 @@
 "use client";
-import React, { useState } from "react";
-import { createContext } from "react";
-
-import React from "react";
+import React, { useState, createContext } from "react";
 
 export const SiteContext = createContext();
 
 export const SiteProvider = ({ children }) => {
   const [menuBtnOn, setMenuBtnOn] = useState(false);
+  console.log(menuBtnOn);
 
   const openMenu = () => {
     setMenuBtnOn(true);
@@ -19,9 +17,11 @@ export const SiteProvider = ({ children }) => {
     setMenuBtnOn(!menuBtnOn);
   };
 
-  <SiteContext.Provider
-    value={{ menuBtnOn, setMenuBtnOn, openMenu, closeMenu, togggleMenu }}
-  >
-    {children}
-  </SiteContext.Provider>;
+  return (
+    <SiteContext.Provider
+      value={{ menuBtnOn, setMenuBtnOn, openMenu, closeMenu, togggleMenu }}
+    >
+      {children}
+    </SiteContext.Provider>
+  );
 };

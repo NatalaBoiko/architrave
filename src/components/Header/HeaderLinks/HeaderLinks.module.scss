@@ -13,13 +13,14 @@
   width: 100%;
   height: 100vh;
   transform: translateX(100%);
-  display: none;
+  opacity: 0;
 
   @media screen and (min-width: 426px) {
     width: 50%;
   }
 
   @media screen and (min-width: 901px) {
+    display: flex;
     position: static;
     flex-direction: row;
     gap: 16px;
@@ -28,7 +29,6 @@
     height: fit-content;
     padding: 0;
     transform: translateX(0);
-    display: flex;
   }
 
   & a {
@@ -43,4 +43,9 @@
       letter-spacing: 0.88px;
     }
   }
+}
+
+.visible {
+  transform: translateX(0);
+  opacity: 1;
 }
