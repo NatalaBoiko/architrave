@@ -1,7 +1,10 @@
 .contacts {
   background-color: var(--contact_bg_color);
   padding-top: 80px;
-  @media screen and (min-width: 768px) {
+  padding-bottom: 16px;
+  // @media screen and (min-width: 768px) {
+
+  @media screen and (min-width: 1224px) {
     padding-bottom: 80px;
   }
 }
@@ -81,17 +84,23 @@
   overflow: hidden;
   position: relative;
   width: 100%;
-  // width: 360px;
   height: 252px;
   border: none;
-  filter: grayscale(0%) invert(92%) contrast(78%);
-  // filter: grayscale(100%) invert(92%) contrast(83%);
-  // @media screen and (min-width: 768px) {
+  // filter: grayscale(0%) invert(92%) contrast(78%);
+  filter: grayscale(0%) invert(92%) contrast(98%);
+
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+
+  @media screen and (min-width: 768px) {
+    height: 382px;
+  }
+
   @media screen and (min-width: 1224px) {
     width: 680px;
     height: 412px;
     border-radius: 30px;
-    // border-radius: 86px;
   }
   & iframe {
     left: 0;
@@ -99,6 +108,7 @@
     height: 100%;
     width: 100%;
     position: absolute;
+    border: none;
   }
 }
 

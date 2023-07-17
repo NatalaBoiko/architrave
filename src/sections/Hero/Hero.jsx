@@ -1,20 +1,16 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import styles from "./Hero.module.scss";
-import Button from "@/components/Button/Button";
-import Modal from "@/components/Modal/Modal";
+import React, { useState } from 'react';
+
+import Button from '@/components/Button/Button';
+import Modal from '@/components/Modal/Modal';
+import Application from '@/components/Modal/Application';
+import useModal from '@/helpers/modal';
+
+import styles from './Hero.module.scss';
 
 const Hero = () => {
-  const [showClick, setShowClick] = useState(false);
-
-  const HandlerOpenClick = () => {
-    setShowClick(true);
-  };
-
-  const HandlerCloseClick = () => {
-    setShowClick(false);
-  };
+  const { showClick, openModal, closeModal, toggleModal } = useModal();
 
   return (
     <section className={styles.hero} id="hero">
@@ -24,15 +20,14 @@ const Hero = () => {
           <p className={styles.heroText}>
             Creating comfort for <span className={styles.heroItem}>YOU</span>
           </p>
-          <Button
-            title="Залишити заявку"
-            type="button"
-            onClick={HandlerOpenClick}
-          />
+          <Button title="Залишити заявку" type="button" onClick={toggleModal} />
         </div>
       </div>
-
-      {showClick && <Modal onClick={HandlerCloseClick} />}
+      {showClick && (
+        <Modal onClick={closeModal}>
+          <Application onClick={closeModal} />
+        </Modal>
+      )}
     </section>
   );
 };
