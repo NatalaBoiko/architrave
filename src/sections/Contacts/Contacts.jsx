@@ -14,7 +14,7 @@ const Contacts = () => {
         <address className={styles.contactsList}>
           <div className={styles.contactsAdressContainer}>
             <div className={styles.contactsIcon}>
-              <Image src={tel} alt="telerhone" width={20} />
+              <Image src={tel} alt="telephone" width={20} />
             </div>
             <a href="tel:+380503738465" className={styles.contactsAdress}>
               +380503738465

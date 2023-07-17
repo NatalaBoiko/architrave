@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Link from "next/link";
 import styles from "./HeaderLinks.module.scss";
 
@@ -11,28 +11,20 @@ import Image from "next/image";
 import closeIcon from "../../../../public/svg/close.svg";
 
 export const HeaderLinks = () => {
-  const { menuBtnOn, setMenuBtnOn, openMenu, closeMenu, togggleMenu } =
-    useContext(SiteContext);
+  const { menuBtnOn, closeMenu, toggleMenu } = useContext(SiteContext);
 
-  // if (menuBtnOn) {
-  //   window.addEventListener("click", (e) => {
-  //     const target = e.target;
-  //     console.log(target.className);
-  //     if (!target.className.includes("visible")) {
-  //       console.log("ha!");
-  //       closeMenu();
-  //     }
-  //   });
-  // } else {
-  //   // window.removeEventListener("click", (e) => {
-  //   //   const target = e.target;
-  //   //   console.log(target.className);
-  //   //   if (!target.className.includes("visible")) {
-  //   //     console.log("ha!");
-  //   //     closeMenu();
-  //   //   }
-  //   // });
-  // }
+  useEffect(() => {
+    const onKeydown = (e) => {
+      if (e.code !== "Escape") return;
+      closeMenu();
+    };
+
+    window.addEventListener("keydown", onKeydown);
+
+    return () => {
+      window.removeEventListener("keydown", onKeydown);
+    };
+  }, [closeMenu]);
 
   return (
     <ul
@@ -48,7 +40,7 @@ export const HeaderLinks = () => {
         width={40}
         height={40}
         className={styles.closeIcon}
-        onClick={togggleMenu}
+        onClick={toggleMenu}
       />
       {headerLincsArr.map(({ id, title, href }) => {
         return (

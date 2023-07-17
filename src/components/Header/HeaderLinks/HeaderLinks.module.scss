@@ -29,6 +29,13 @@
     height: fit-content;
     padding: 0;
     transform: translateX(0);
+    opacity: 1;
+  }
+
+  & .closeIcon {
+    @media screen and (min-width: 901px) {
+      display: none;
+    }
   }
 
   & a {

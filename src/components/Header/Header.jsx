@@ -4,13 +4,11 @@ import styles from "./Header.module.scss";
 
 import { HeaderLinks } from "./HeaderLinks/HeaderLinks";
 import Button from "../Button/Button";
-// import { MobileMenu } from "./MobileMenu/MobileMenu";
 import { HeaderMenuBtn } from "./HeaderMenuBtn/HeaderMenuBtn";
 
 const Header = () => {
   return (
     <header className={styles.header}>
-      {/* <MobileMenu /> */}
       <HeaderMenuBtn />
       <Image
         src="/logo.png"

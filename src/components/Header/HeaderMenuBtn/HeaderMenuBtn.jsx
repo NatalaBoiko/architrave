@@ -7,7 +7,7 @@ import styles from "./HeaderMenuBtn.module.scss";
 import { SiteContext } from "@/context/SiteContext";
 
 export const HeaderMenuBtn = () => {
-  const { menuBtnOn, setMenuBtnOn, openMenu, closeMenu, togggleMenu } =
+  const { menuBtnOn, setMenuBtnOn, openMenu, closeMenu, toggleMenu } =
     useContext(SiteContext);
   return (
     <>
@@ -17,7 +17,7 @@ export const HeaderMenuBtn = () => {
         width={16}
         height={16}
         className={styles.mobileMenu}
-        onClick={togggleMenu}
+        onClick={toggleMenu}
       />
     </>
   );
