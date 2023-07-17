@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import styles from './Hero.module.scss';
-import Button from '@/components/Button/Button';
-import Modal from '@/components/Modal/Modal';
+import React, { useState } from "react";
+import styles from "./Hero.module.scss";
+import Button from "@/components/Button/Button";
+import Modal from "@/components/Modal/Modal";
 
 const Hero = () => {
   const [showClick, setShowClick] = useState(false);
@@ -32,7 +32,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {showClick && <Modal closeModal={HandlerCloseClick} />}
+      {showClick && <Modal onClick={HandlerCloseClick} />}
     </section>
   );
 };

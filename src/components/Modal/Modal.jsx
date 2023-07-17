@@ -1,47 +1,43 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { useEffect } from 'react';
-import { Jura } from 'next/font/google';
-import Backdrop from './Backdrop';
-import ModalForm from './ModalForm';
+import Image from "next/image";
+import { useEffect } from "react";
+import { Jura } from "next/font/google";
+import Backdrop from "./Backdrop";
+import ModalForm from "./ModalForm";
 
-import email from '/public/svg/email-modal.svg';
-import tel from '/public/svg/tell-modal.svg';
-import close from '/public/svg/cancelArchitrave.svg';
-import logo from '/public/svg/logo-architrave.svg';
+import email from "/public/svg/email-modal.svg";
+import tel from "/public/svg/tell-modal.svg";
+import close from "/public/svg/cancelArchitrave.svg";
+import logo from "/public/svg/logo-architrave.svg";
 
-import styles from './modal.module.scss';
+import styles from "./modal.module.scss";
 
 const jura = Jura({
-  subsets: ['latin', 'cyrillic'],
-  weight: ['400', '500', '600', '700'],
-  display: 'swap',
+  subsets: ["latin", "cyrillic"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
-const Modal = ({ closeModal }) => {
+const Modal = ({ onClick }) => {
   useEffect(() => {
     const onKeydown = (e) => {
-      if (e.code !== 'Escape') return;
-      closeModal();
+      if (e.code !== "Escape") return;
+      onClick();
     };
 
-    window.addEventListener('keydown', onKeydown);
-    return () => window.removeEventListener('keydown', onKeydown);
-  }, [closeModal]);
+    window.addEventListener("keydown", onKeydown);
+    return () => window.removeEventListener("keydown", onKeydown);
+  }, [onClick]);
 
   return (
-    <Backdrop closeModal={closeModal}>
+    <Backdrop onClick={onClick}>
       <div onClick={(e) => e.stopPropagation()} className={styles.modal}>
         <div className={styles.modalContent}>
           <div className={styles.iconArchitrave} />
           <Image src={logo} alt="icon" className={styles.logo} />
           <div className={styles.iconCloseBlog} />
-          <button
-            className={styles.btnClose}
-            type="button"
-            onClick={closeModal}
-          >
+          <button className={styles.btnClose} type="button" onClick={onClick}>
             <Image src={close} alt="close" className={styles.close} />
           </button>
           <div className={`${styles.contactsContainer} ${jura.className}`}>

@@ -1,8 +1,8 @@
-import styles from './modal.module.scss';
+import styles from "./modal.module.scss";
 
-const Backdrop = ({ closeModal, children }) => {
+const Backdrop = ({ onClick, children }) => {
   return (
-    <div className={styles.backdrop} onClick={closeModal}>
+    <div className={styles.backdrop} onClick={onClick}>
       {children}
     </div>
   );
