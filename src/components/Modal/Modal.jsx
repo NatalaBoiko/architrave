@@ -33,40 +33,41 @@ const Modal = ({ closeModal }) => {
   return (
     <Backdrop closeModal={closeModal}>
       <div onClick={(e) => e.stopPropagation()} className={styles.modal}>
-        <div className={styles.iconArchitrave} />
-        <Image src={logo} alt="icon" width={60} className={styles.logo} />
-        <div className={styles.iconCloseBlog} />
-        <button className={styles.btnClose} type="button" onClick={closeModal}>
-          <Image src={close} alt="close" width={35} />
-        </button>
-        <div className={`${styles.contactsContainer} ${jura.className}`}>
-          <p className={styles.text}>або зв’яжіться з нами</p>
-          <div className={styles.contacts}>
-            <div className={styles.contactsIcon}>
-              <Image src={tel} alt="telephone" width={20} />
+        <div className={styles.modalContent}>
+          <div className={styles.iconArchitrave} />
+          <Image src={logo} alt="icon" className={styles.logo} />
+          <div className={styles.iconCloseBlog} />
+          <button
+            className={styles.btnClose}
+            type="button"
+            onClick={closeModal}
+          >
+            <Image src={close} alt="close" className={styles.close} />
+          </button>
+          <div className={`${styles.contactsContainer} ${jura.className}`}>
+            <p className={styles.text}>або зв’яжіться з нами</p>
+            <div className={styles.contacts}>
+              <div className={styles.contactsIcon}>
+                <Image src={tel} alt="telephone" className={styles.icon} />
+              </div>
+              <a href="tel:+380503738465" className={styles.contactsAdress}>
+                +380503738465
+              </a>
             </div>
-            <a href="tel:+380503738465" className={styles.contactsAdress}>
-              +380503738465
-            </a>
-          </div>
-          <div className={styles.contacts}>
-            <div className={styles.contactsIcon}>
-              <Image
-                src={email}
-                alt="email"
-                width={20}
-                className={styles.icon}
-              />
+            <div className={styles.contacts}>
+              <div className={styles.contactsIcon}>
+                <Image src={email} alt="email" className={styles.icon} />
+              </div>
+              <a
+                href="mailto:natalabojko@gmail.com"
+                className={styles.contactsAdress}
+              >
+                natalabojko@gmail.com
+              </a>
             </div>
-            <a
-              href="mailto:natalabojko@gmail.com"
-              className={styles.contactsAdress}
-            >
-              natalabojko@gmail.com
-            </a>
           </div>
+          <ModalForm />
         </div>
-        <ModalForm />
       </div>
     </Backdrop>
   );
