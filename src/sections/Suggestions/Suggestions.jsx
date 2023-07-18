@@ -12,6 +12,7 @@ const Suggestions = () => {
           return (
             <li key={id}>
               <Image src={src} alt={alt} fill={true} />
+              <h3>{alt}</h3>
             </li>
           );
         })}
