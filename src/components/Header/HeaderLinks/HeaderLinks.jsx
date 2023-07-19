@@ -35,15 +35,9 @@ export const HeaderLinks = () => {
           : styles.headerLinks
       }
     >
-      <Image
-        src={closeIcon}
-        alt=" qwe"
-        width={20}
-        height={20}
-        className={styles.closeIcon}
-        onClick={toggleMenu}
-      />
-
+      <svg className={styles.closeSvg} onClick={toggleMenu}>
+        <use href="/sprite.svg#icon-close"></use>
+      </svg>
       {headerLincsArr.map(({ id, title, href }) => {
         return (
           <li key={id} onClick={closeMenu}>

@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import Image from 'next/image';
-import styles from './Header.module.scss';
+import React, { useState } from "react";
+import Image from "next/image";
+import styles from "./Header.module.scss";
 
-import { HeaderLinks } from './HeaderLinks/HeaderLinks';
-import Button from '../Button/Button';
-import { HeaderMenuBtn } from './HeaderMenuBtn/HeaderMenuBtn';
-import Modal from '../Modal/Modal';
-import Application from '../Modal/Application';
-import useModal from '@/helpers/modal';
+import { HeaderLinks } from "./HeaderLinks/HeaderLinks";
+import Button from "../Button/Button";
+import { HeaderMenuBtn } from "./HeaderMenuBtn/HeaderMenuBtn";
+import Modal from "../Modal/Modal";
+import Application from "../Modal/Application";
+import useModal from "@/helpers/modal";
 
 const Header = () => {
   const { showClick, openModal, closeModal, toggleModal } = useModal();
@@ -17,6 +17,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <HeaderMenuBtn />
+
       <Image
         src="/logo.png"
         width={60}
