@@ -74,4 +74,27 @@
   & image {
     object-fit: contain;
   }
+
+  & h3 {
+    text-align: center;
+    font-size: 8.105px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.446px;
+    text-transform: uppercase;
+    position: absolute;
+    color: var(--light_fonf_color);
+
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    background-color: rgba(22, 22, 22, 0.9);
+    padding: 16px 0px;
+
+    @media screen and (min-width: 426px) {
+      font-size: 20px;
+      padding: 40px 0px;
+    }
+  }
 }
