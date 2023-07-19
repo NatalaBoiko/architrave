@@ -8,7 +8,8 @@ import { headerLincsArr } from "@/data/headerLincsArr";
 import { handleScroll } from "@/helpers/handleScroll";
 import { SiteContext } from "@/context/SiteContext";
 import Image from "next/image";
-import closeIcon from "../../../../public/svg/close.svg";
+
+import closeIcon from "/public/svg/close.svg";
 
 export const HeaderLinks = () => {
   const { menuBtnOn, closeMenu, toggleMenu } = useContext(SiteContext);
@@ -37,11 +38,12 @@ export const HeaderLinks = () => {
       <Image
         src={closeIcon}
         alt=" qwe"
-        width={40}
-        height={40}
+        width={20}
+        height={20}
         className={styles.closeIcon}
         onClick={toggleMenu}
       />
+
       {headerLincsArr.map(({ id, title, href }) => {
         return (
           <li key={id} onClick={closeMenu}>

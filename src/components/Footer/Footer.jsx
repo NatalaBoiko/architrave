@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import React from 'react';
-import styles from './Footer.module.scss';
+import Link from "next/link";
+import React from "react";
+import styles from "./Footer.module.scss";
 
 const Footer = ({ caveat }) => {
   return (
@@ -14,15 +14,6 @@ const Footer = ({ caveat }) => {
         <h2 className={styles.animateCharcter}>webevery.dev</h2>
         <p>made by</p>
       </Link>
-      {/* <Link
-        href="https://webevery.dev/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className={caveat.className}
-      >
-        <h2 className={styles.animateCharcter}>webevery.dev</h2>
-        made by
-      </Link> */}
     </footer>
   );
 };
