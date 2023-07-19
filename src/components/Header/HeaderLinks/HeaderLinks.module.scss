@@ -32,19 +32,6 @@
     opacity: 1;
   }
 
-  // & .closeIcon {
-  //   display: block;
-  //   @media screen and (min-width: 901px) {
-  //     display: none;
-  //   }
-  //   &:hover,
-  //   &:focus {
-  //     scale: 0.9;
-  //     transform: rotate(180deg);
-  //     stroke: #0ef94f;
-  //   }
-  // }
-
   & a {
     font-size: 24px;
     color: #fff;
@@ -64,7 +51,6 @@
       text-decoration: underline;
       text-underline-offset: 3px;
       text-shadow: 0px 0px 1px wheat;
-      // background-color: #0ef94f;
     }
   }
 }
@@ -88,5 +74,23 @@
     scale: 0.9;
     transform: rotate(180deg);
     stroke: #0ef94f;
+  }
+}
+
+.closeSvg {
+  width: 40px;
+  height: 40px;
+
+  stroke: var(--main_bg_color);
+  stroke-width: 2;
+
+  &:hover,
+  &:focus {
+    scale: 1.2;
+    transform: rotate(90deg);
+  }
+
+  @media screen and (min-width: 901px) {
+    display: none;
   }
 }

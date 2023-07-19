@@ -11,14 +11,9 @@ export const HeaderMenuBtn = () => {
     useContext(SiteContext);
   return (
     <>
-      <Image
-        src="/mobileMenu.svg"
-        alt="menu"
-        width={16}
-        height={16}
-        className={styles.mobileMenu}
-        onClick={toggleMenu}
-      />
+      <svg className={styles.mobileMenu} onClick={toggleMenu}>
+        <use href="/sprite.svg#icon-burger"></use>
+      </svg>
     </>
   );
 };
