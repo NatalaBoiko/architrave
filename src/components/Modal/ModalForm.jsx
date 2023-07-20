@@ -1,11 +1,30 @@
+'use client';
+
+import { useState } from 'react';
 import styles from './modal.module.scss';
 
 const ModalForm = () => {
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const data = {
+      name,
+      phone,
+      email,
+      message,
+    };
+    console.log(data);
+  };
   return (
     <form
       className={styles.form}
       action="/"
-      // method="post"
+      onSubmit={handleSubmit}
+      method="post"
     >
       <label className={styles.label} htmlFor="name">
         Ім’я
@@ -15,6 +34,7 @@ const ModalForm = () => {
           id="name"
           name="name"
           placeholder="Введіть ім’я"
+          onChange={(e) => setName(e.target.value)}
           required
         />
       </label>
@@ -26,6 +46,7 @@ const ModalForm = () => {
           id="phone"
           name="phone"
           placeholder="Введіть номер"
+          onChange={(e) => setPhone(e.target.value)}
           required
         />
       </label>
@@ -37,6 +58,7 @@ const ModalForm = () => {
           id="email"
           name="email"
           placeholder="Введіть пошту"
+          onChange={(e) => setEmail(e.target.value)}
           required
         />
       </label>
@@ -49,7 +71,7 @@ const ModalForm = () => {
           cols="20"
           rows="10"
           placeholder="Опис ідєї"
-          readOnly
+          onChange={(e) => setMessage(e.target.value)}
         />
       </label>
       <button className={styles.btn} type="submit">
