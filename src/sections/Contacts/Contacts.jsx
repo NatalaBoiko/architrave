@@ -1,10 +1,5 @@
-import Image from 'next/image';
 import React from 'react';
 import styles from './Contacts.module.scss';
-import tel from '/public/svg/telArchitrave.svg';
-import email from '/public/svg/emailArchitrave.svg';
-import location from '/public/svg/locationArchitrave.svg';
-import Link from 'next/link';
 
 const Contacts = () => {
   return (
@@ -13,31 +8,37 @@ const Contacts = () => {
       <div className={styles.contactsContent}>
         <address className={styles.contactsList}>
           <div className={styles.contactsAdressContainer}>
-            <div className={styles.contactsIcon}>
-              <Image src={tel} alt="telephone" width={20} />
-            </div>
             <a href="tel:+380503738465" className={styles.contactsAdress}>
+              <div className={styles.contactsIcon}>
+                <svg className={styles.icon}>
+                  <use href="/sprite.svg#icon-telArchitrave" />
+                </svg>
+              </div>
               +380503738465
             </a>
           </div>
           <div className={styles.contactsAdressContainer}>
-            <div className={styles.contactsIcon}>
-              <Image src={email} alt="email" width={16} />
-            </div>
             <a
               href="mailto:natalabojko@gmail.com"
               className={styles.contactsAdress}
             >
+              <div className={styles.contactsIcon}>
+                <svg className={styles.icon}>
+                  <use href="/sprite.svg#icon-emailArchitrave" />
+                </svg>
+              </div>
               natalabojko@gmail.com
             </a>
           </div>
           <div className={styles.contactsAdressContainer}>
-            <div className={styles.contactsIcon}>
-              <Image src={location} alt="location" width={16} />
-            </div>
-            <p className={styles.contactsAdress}>
+            <div className={styles.contactsAdress}>
+              <div className={styles.contactsIcon}>
+                <svg className={styles.icon}>
+                  <use href="/sprite.svg#icon-locationArchitrave" />
+                </svg>
+              </div>
               м. Івано-Франківськ, вул. Манюха, 19
-            </p>
+            </div>
           </div>
         </address>
         <div className={styles.contactsMap}>
