@@ -1,0 +1,9 @@
+.item {
+  width: 247px;
+  height: 288px;
+  position: relative;
+
+  & img {
+    object-fit: cover;
+  }
+}
