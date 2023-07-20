@@ -1,0 +1,7 @@
+.gallery {
+  padding: 72px;
+  // align-items: center;
+  @media screen and (min-width: 1025px) {
+    padding: 72px 130px;
+  }
+}
