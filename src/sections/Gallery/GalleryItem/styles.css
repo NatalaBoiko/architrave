@@ -69,7 +69,8 @@
 }
 
 .mySwiper2 {
-  height: 80%;
+  /* height: 80%; */
+  height: 400px;
   width: 100%;
 }
 
