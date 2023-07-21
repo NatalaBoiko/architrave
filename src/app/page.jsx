@@ -1,5 +1,5 @@
 // import Image from "next/image";
-import ToTopBtn from "@/components/ToTopBtn/ToTopBtn";
+// import ToTopBtn from "@/components/ToTopBtn/ToTopBtn";
 import About from "@/sections/About/About";
 import Contacts from "@/sections/Contacts/Contacts";
 import Gallery from "@/sections/Gallery/Gallery";
@@ -15,7 +15,7 @@ export default function Home() {
       <Suggestions />
       <Gallery />
       <Contacts />
-      <ToTopBtn />
+      {/* <ToTopBtn /> */}
     </>
   );
 }
