@@ -7,10 +7,12 @@ const ToTopBtn = () => {
   window.onscroll = function () {
     scrollFunction();
   };
+  document.body.addEventListener("scroll", scrollFunction);
 
   function scrollFunction() {
     let backToTop = document.getElementById("backToTop");
     if (!backToTop) return;
+
     if (
       document.body.scrollTop >= 200 ||
       document.documentElement.scrollTop >= 200
