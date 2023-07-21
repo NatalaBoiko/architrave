@@ -7,9 +7,8 @@ const ToTopBtn = () => {
   //   window.onscroll = function () {
   //     scrollFunction();
   //   };
-  window.addEventListener("scroll", scrollFunction);
 
-  function scrollFunction() {
+  const scrollFunction = () => {
     let backToTop = document.getElementById("backToTop");
     if (!backToTop) return;
 
@@ -25,12 +24,14 @@ const ToTopBtn = () => {
       //     backToTop.style.display = "none";
       //   }, 1000);
     }
-  }
+  };
 
-  function topFunction() {
+  window.addEventListener("scroll", scrollFunction);
+
+  const topFunction = () => {
     document.body.scrollTop = 0; //For Safari
     document.documentElement.scrollTop = 0;
-  }
+  };
 
   return (
     <button id="backToTop" onClick={topFunction} className={scrollFunction()}>
