@@ -1,14 +1,15 @@
 .backdrop {
   position: fixed;
-  top: 0rem;
-  left: 0rem;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.643);
-  overflow-y: auto;
+  overflow: hidden;
+  // overflow-y: hidden;
   z-index: 100;
   box-shadow: 1.294952630996704px 1.294952630996704px 12.949525833129883px 0px
     rgba(0, 0, 0, 0.25);
@@ -24,20 +25,19 @@
   overflow: hidden;
   position: relative;
   cursor: auto;
-  border: none;
 }
 
 .modalContent {
-  padding: 70px 16px 16px 16px;
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
+  padding: 80px 16px 16px 16px;
 
   @media screen and (min-width: 768px) {
     height: 592px;
     flex-direction: row;
-    padding: 27px 16px;
     align-items: flex-start;
+    padding: 27px 16px;
   }
 }
 
@@ -159,7 +159,7 @@
   font-weight: 500;
   display: flex;
   align-items: center;
-
+  outline: none;
   @media screen and (min-width: 768px) {
     font-size: 14px;
     font-weight: 700;
@@ -168,18 +168,23 @@
   &:hover,
   &:focus {
     color: var(--accent_color);
-    stroke: currentColor;
+    // stroke: currentColor;
     fill: transparent;
+    fill: currentColor;
   }
 }
 
 .icon {
   width: 12px;
   height: 12px;
+  // fill: currentColor;
   fill: transparent;
   stroke: currentColor;
 
   margin-right: 16px;
+  &:last-child {
+    stroke-width: 3;
+  }
   @media screen and (min-width: 768px) {
     width: 20px;
     height: 20px;
@@ -201,10 +206,10 @@
   letter-spacing: 0.32px;
 
   color: var(--modal_text_color);
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   margin-bottom: 4px;
+  cursor: pointer;
 
   @media screen and (min-width: 768px) {
     font-size: 24px;
@@ -281,6 +286,7 @@
   background: var(--modal_bg_color);
   padding: 12px 20px;
   margin: 0px auto 16px auto;
+  outline: none;
   cursor: pointer;
 
   @media screen and (min-width: 768px) {
