@@ -18,11 +18,8 @@ import "./styles.css";
 // import required modules
 import {
   Navigation,
-  Pagination,
   Mousewheel,
   Keyboard,
-  EffectCube,
-  Autoplay,
   Thumbs,
   FreeMode,
 } from "swiper/modules";
@@ -44,29 +41,13 @@ export const GalleryItem = () => {
   return (
     <>
       <Swiper
-        // // slidesPerView={3}
-        // // centeredSlides={true}
-        // // autoplay={{
-        // //   delay: 2500,
-        // //   disableOnInteraction: false,
-        // // }}
+        modules={[FreeMode, Navigation, Thumbs, Mousewheel, Keyboard]}
         loop={true}
         // pagination={{
         //   clickable: true,
         //   dynamicBullets: true,
         // }}
-        // navigation={true}
-        // modules={[Pagination, Navigation]}
-        // // className="mySwiper"
-
-        // slidesPerView={"auto"}
-        // // spaceBetween={30}
-        // // pagination={{
-        // //   clickable: true,
-        // // }}
-        // // modules={[Pagination]}
-        // className="mySwiper"
-
+        mousewheel={true}
         style={{
           "--swiper-navigation-color": "#fff",
           "--swiper-pagination-color": "#fff",
@@ -74,18 +55,18 @@ export const GalleryItem = () => {
         spaceBetween={10}
         navigation={true}
         thumbs={{ swiper: thumbsSwiper }}
-        modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiper2"
       >
         {item}
       </Swiper>
       <Swiper
+        modules={[FreeMode, Navigation, Thumbs, Mousewheel, Keyboard]}
         onSwiper={setThumbsSwiper}
         spaceBetween={10}
         slidesPerView={4}
+        mousewheel={true}
         freeMode={true}
         watchSlidesProgress={true}
-        modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiper"
       >
         {item}

@@ -96,9 +96,17 @@
   height: 100%;
   object-fit: cover;
 }
+
+.swiper-button-prev,
+.swiper-button-next {
+  @media screen and (max-width: 425px) {
+    display: none;
+  }
+}
+
 .swiper-button-prev:after,
 .swiper-button-next:after {
   color: var(--accent_color);
-  font-size: 72px;
+  font-size: 36px;
   font-weight: bold;
 }
