@@ -4,10 +4,10 @@ import React from "react";
 import styles from "./ToTopBtn.module.scss";
 
 const ToTopBtn = () => {
-  window.onscroll = function () {
-    scrollFunction();
-  };
-  document.body.addEventListener("scroll", scrollFunction);
+  //   window.onscroll = function () {
+  //     scrollFunction();
+  //   };
+  window.addEventListener("scroll", scrollFunction);
 
   function scrollFunction() {
     let backToTop = document.getElementById("backToTop");
