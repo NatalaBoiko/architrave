@@ -1,0 +1,24 @@
+.toTopBtnHidden,
+.toTopBtn {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+
+  width: 64px;
+  height: 64px;
+  background: none;
+  outline: none;
+  border: none;
+
+  & svg {
+    fill: rgba(255, 255, 255, 0.238);
+    stroke: var(--dark_fonf_color);
+    width: 64px;
+    height: 64px;
+    filter: brightness(3);
+  }
+}
+
+.toTopBtnHidden {
+  bottom: -100px;
+}
