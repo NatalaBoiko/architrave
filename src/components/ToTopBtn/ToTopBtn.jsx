@@ -3,50 +3,24 @@
 import React from "react";
 import styles from "./ToTopBtn.module.scss";
 
-const scrollFunction = () => {
-  let backToTop = document.getElementById("backToTop");
-  if (!backToTop) return;
-
-  if (
-    document.body.scrollTop >= 200 ||
-    document.documentElement.scrollTop >= 200
-  ) {
-    backToTop.className = styles.toTopBtn;
-  } else {
-    backToTop.className = styles.toTopBtnHidden;
-
-    //   setTimeout(() => {
-    //     backToTop.style.display = "none";
-    //   }, 1000);
-  }
-};
-
-window.addEventListener("scroll", scrollFunction);
-
 const ToTopBtn = () => {
-  //   window.onscroll = function () {
-  //     scrollFunction();
-  //   };
+  function scrollFunction() {
+    let backToTop = document.getElementById("toTop");
+    if (!backToTop) return;
+    if (
+      document.body.scrollTop >= 200 ||
+      document.documentElement.scrollTop >= 200
+    ) {
+      backToTop.className = styles.toTopBtn;
+    } else {
+      backToTop.className = styles.toTopBtnHidden;
+      //   setTimeout(() => {
+      //     backToTop.style.display = "none";
+      //   }, 1000);
+    }
+  }
 
-  //   const scrollFunction = () => {
-  //     let backToTop = document.getElementById("backToTop");
-  //     if (!backToTop) return;
-
-  //     if (
-  //       document.body.scrollTop >= 200 ||
-  //       document.documentElement.scrollTop >= 200
-  //     ) {
-  //       backToTop.className = styles.toTopBtn;
-  //     } else {
-  //       backToTop.className = styles.toTopBtnHidden;
-
-  //       //   setTimeout(() => {
-  //       //     backToTop.style.display = "none";
-  //       //   }, 1000);
-  //     }
-  //   };
-
-  //   window.addEventListener("scroll", scrollFunction);
+  document.addEventListener("scroll", scrollFunction);
 
   const topFunction = () => {
     document.body.scrollTop = 0; //For Safari
@@ -54,7 +28,7 @@ const ToTopBtn = () => {
   };
 
   return (
-    <button id="backToTop" onClick={topFunction} className={scrollFunction()}>
+    <button id="toTop" onClick={topFunction} className={scrollFunction()}>
       <svg>
         <use href="./sprite.svg#icon-circle-up"></use>
       </svg>
