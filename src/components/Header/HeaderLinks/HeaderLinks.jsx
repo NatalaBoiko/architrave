@@ -7,9 +7,6 @@ import styles from "./HeaderLinks.module.scss";
 import { headerLincsArr } from "@/data/headerLincsArr";
 import { handleScroll } from "@/helpers/handleScroll";
 import { SiteContext } from "@/context/SiteContext";
-import Image from "next/image";
-
-import closeIcon from "/public/svg/close.svg";
 
 export const HeaderLinks = () => {
   const { menuBtnOn, closeMenu, toggleMenu } = useContext(SiteContext);
