@@ -3,30 +3,50 @@
 import React from "react";
 import styles from "./ToTopBtn.module.scss";
 
+const scrollFunction = () => {
+  let backToTop = document.getElementById("backToTop");
+  if (!backToTop) return;
+
+  if (
+    document.body.scrollTop >= 200 ||
+    document.documentElement.scrollTop >= 200
+  ) {
+    backToTop.className = styles.toTopBtn;
+  } else {
+    backToTop.className = styles.toTopBtnHidden;
+
+    //   setTimeout(() => {
+    //     backToTop.style.display = "none";
+    //   }, 1000);
+  }
+};
+
+window.addEventListener("scroll", scrollFunction);
+
 const ToTopBtn = () => {
   //   window.onscroll = function () {
   //     scrollFunction();
   //   };
 
-  const scrollFunction = () => {
-    let backToTop = document.getElementById("backToTop");
-    if (!backToTop) return;
+  //   const scrollFunction = () => {
+  //     let backToTop = document.getElementById("backToTop");
+  //     if (!backToTop) return;
 
-    if (
-      document.body.scrollTop >= 200 ||
-      document.documentElement.scrollTop >= 200
-    ) {
-      backToTop.className = styles.toTopBtn;
-    } else {
-      backToTop.className = styles.toTopBtnHidden;
+  //     if (
+  //       document.body.scrollTop >= 200 ||
+  //       document.documentElement.scrollTop >= 200
+  //     ) {
+  //       backToTop.className = styles.toTopBtn;
+  //     } else {
+  //       backToTop.className = styles.toTopBtnHidden;
 
-      //   setTimeout(() => {
-      //     backToTop.style.display = "none";
-      //   }, 1000);
-    }
-  };
+  //       //   setTimeout(() => {
+  //       //     backToTop.style.display = "none";
+  //       //   }, 1000);
+  //     }
+  //   };
 
-  window.addEventListener("scroll", scrollFunction);
+  //   window.addEventListener("scroll", scrollFunction);
 
   const topFunction = () => {
     document.body.scrollTop = 0; //For Safari
