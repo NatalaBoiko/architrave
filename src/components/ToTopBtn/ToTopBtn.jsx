@@ -1,34 +1,39 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./ToTopBtn.module.scss";
 
-const ToTopBtn = () => {
-  function scrollFunction() {
-    let backToTop = document.getElementById("toTop");
-    if (!backToTop) return;
-    if (
-      document.body.scrollTop >= 200 ||
-      document.documentElement.scrollTop >= 200
-    ) {
-      backToTop.className = styles.toTopBtn;
+const ToTopBtn = ({ id }) => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  const toggleVisibility = () => {
+    if (window.pageYOffset > 300) {
+      setIsVisible(true);
     } else {
-      backToTop.className = styles.toTopBtnHidden;
-      //   setTimeout(() => {
-      //     backToTop.style.display = "none";
-      //   }, 1000);
+      setIsVisible(false);
     }
-  }
-
-  document.addEventListener("scroll", scrollFunction);
-
-  const topFunction = () => {
-    document.body.scrollTop = 0; //For Safari
-    document.documentElement.scrollTop = 0;
   };
 
+  useEffect(() => {
+    window.addEventListener("scroll", toggleVisibility);
+
+    return () => {
+      window.removeEventListener("scroll", toggleVisibility);
+    };
+  }, []);
+
+  const isBrowser = () => typeof window !== "undefined"; //The approach recommended by Next.js
+
+  function scrollToTop() {
+    if (!isBrowser()) return;
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
   return (
-    <button id="toTop" onClick={topFunction} className={scrollFunction()}>
+    <button
+      onClick={scrollToTop}
+      className={isVisible ? styles.toTopBtn : styles.toTopBtnHidden}
+    >
       <svg>
         <use href="./sprite.svg#icon-circle-up"></use>
       </svg>
