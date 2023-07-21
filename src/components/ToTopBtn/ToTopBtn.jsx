@@ -18,6 +18,7 @@ const ToTopBtn = () => {
       backToTop.className = styles.toTopBtn;
     } else {
       backToTop.className = styles.toTopBtnHidden;
+
       //   setTimeout(() => {
       //     backToTop.style.display = "none";
       //   }, 1000);
