@@ -13,10 +13,11 @@ const ModalForm = () => {
   //send email
 
   const form = useRef();
+  console.log(form.current);
 
   const sendEmail = (e) => {
-    e.preventDefault();
-
+    // e.preventDefault();
+    console.log(form.current);
     emailjs
       .sendForm(
         "service_cknjun9",
@@ -32,6 +33,8 @@ const ModalForm = () => {
           console.log(error.text);
         }
       );
+
+    form.current.reset();
   };
 
   // const handleSubmit = (e) => {
