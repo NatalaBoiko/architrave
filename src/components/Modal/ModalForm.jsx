@@ -1,30 +1,58 @@
-'use client';
+"use client";
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
-import { useState } from 'react';
-import styles from './modal.module.scss';
+import styles from "./modal.module.scss";
 
 const ModalForm = () => {
-  const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
-  const handleSubmit = (e) => {
+  //send email
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
     e.preventDefault();
-    const data = {
-      name,
-      phone,
-      email,
-      message,
-    };
-    console.log(data);
+
+    emailjs
+      .sendForm(
+        "service_cknjun9",
+        "template_bllpisk",
+        form.current,
+        "EdEHhqkrh47QPGVKz"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   const data = {
+  //     name,
+  //     phone,
+  //     email,
+  //     message,
+  //   };
+  //   console.log(data);
+  // };
   return (
     <form
       className={styles.form}
       action="/"
-      onSubmit={handleSubmit}
-      method="post"
+      // onSubmit={handleSubmit}
+      // method="post"
+
+      ref={form}
+      onSubmit={sendEmail}
     >
       <label className={styles.label} htmlFor="name">
         Ім’я
@@ -32,7 +60,8 @@ const ModalForm = () => {
           className={styles.input}
           type="text"
           id="name"
-          name="name"
+          // name="name"
+          name="from_name"
           placeholder="Введіть ім’я"
           onChange={(e) => setName(e.target.value)}
           required
@@ -44,7 +73,8 @@ const ModalForm = () => {
           className={styles.input}
           type="tel"
           id="phone"
-          name="phone"
+          // name="phone"
+          name="user_phone"
           placeholder="Введіть номер"
           onChange={(e) => setPhone(e.target.value)}
           required
@@ -56,7 +86,8 @@ const ModalForm = () => {
           className={styles.input}
           type="email"
           id="email"
-          name="email"
+          // name="email"
+          name="email_id"
           placeholder="Введіть пошту"
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -66,7 +97,7 @@ const ModalForm = () => {
         Ідея
         <textarea
           className={`${styles.input} ${styles.textarea}`}
-          name="idea"
+          name="message"
           id="idea"
           cols="20"
           rows="10"

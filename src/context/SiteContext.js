@@ -6,6 +6,8 @@ export const SiteContext = createContext();
 export const SiteProvider = ({ children }) => {
   const [menuBtnOn, setMenuBtnOn] = useState(false);
   // console.log(menuBtnOn);
+  const [isModalVisible, setModalVisible] = useState(false);
+  console.log(isModalVisible);
 
   const openMenu = () => {
     setMenuBtnOn(true);
@@ -25,6 +27,8 @@ export const SiteProvider = ({ children }) => {
         openMenu,
         closeMenu,
         toggleMenu,
+        isModalVisible,
+        setModalVisible,
       }}
     >
       {children}
