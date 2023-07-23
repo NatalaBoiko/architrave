@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import Button from '@/components/Button/Button';
-import Modal from '@/components/Modal/Modal';
-import Application from '@/components/Modal/Application';
-import useModal from '@/helpers/modal';
+import Button from "@/components/Button/Button";
+import Modal from "@/components/Modal/Modal";
+import Application from "@/components/Modal/Application";
+import useModal from "@/helpers/modal";
 
-import styles from './Hero.module.scss';
+import styles from "./Hero.module.scss";
 
 const Hero = () => {
   const { showClick, openModal, closeModal, toggleModal } = useModal();
