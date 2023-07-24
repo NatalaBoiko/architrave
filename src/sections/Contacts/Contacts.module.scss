@@ -70,9 +70,11 @@
     color: var(--accent_color);
     fill: currentColor;
   }
-  &:hover > .contactsIcon,
-  &:focus > .contactsIcon {
-    border: 1px solid var(--accent_color);
+  @media screen and (min-width: 768px) {
+    &:hover > .contactsIcon,
+    &:focus > .contactsIcon {
+      border: 1px solid var(--accent_color);
+    }
   }
 }
 
@@ -93,6 +95,7 @@
 
 .icon {
   width: 20px;
+  height: 20px;
   fill: currentColor;
 }
 
