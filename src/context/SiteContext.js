@@ -8,6 +8,7 @@ export const SiteProvider = ({ children }) => {
   // console.log(menuBtnOn);
   const [isModalVisible, setModalVisible] = useState(false);
   console.log(isModalVisible);
+  const [modalBackdrop, setModalBackdrop] = useState(false);
 
   const openMenu = () => {
     setMenuBtnOn(true);
@@ -29,6 +30,8 @@ export const SiteProvider = ({ children }) => {
         toggleMenu,
         isModalVisible,
         setModalVisible,
+        modalBackdrop,
+        setModalBackdrop,
       }}
     >
       {children}

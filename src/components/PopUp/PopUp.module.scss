@@ -1,0 +1,31 @@
+.modalWrapper,
+.modalWrapperVisible {
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  position: absolute;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalWrapperVisible {
+  display: flex;
+}
+
+.backDrop {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  transition-duration: 1s;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.backDropVisible {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.493);
+}
