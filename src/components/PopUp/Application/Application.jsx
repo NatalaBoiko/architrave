@@ -39,7 +39,7 @@ const Application = () => {
 
           setTimeout(() => {
             setModalVisible(false);
-          }, 3000);
+          }, 1100);
         }}
       >
         <svg className={styles.close}>

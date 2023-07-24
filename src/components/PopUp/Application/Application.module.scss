@@ -1,22 +1,22 @@
 .modalContent {
+  padding: 20px;
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
   background-color: var(--main_bg_color);
-  border-radius: 32px;
+  border-radius: 16px;
   position: relative;
   overflow: hidden;
   //   transform: translateX(100%);
   //   transform: rotate(0);
   scale: 0;
 
-  @media screen and (min-width: 768px) {
-    height: 592px;
+  @media screen and (min-width: 769px) {
+    padding: 30px;
     flex-direction: row;
     align-items: flex-start;
-
-    width: 821px;
-    height: 592px;
+    border-radius: 32px;
+    height: 628px;
   }
 }
 .modalContentVisible {
@@ -31,6 +31,7 @@
 }
 
 .iconArchitrave {
+  display: none;
   width: 222px;
   height: 222px;
   border-radius: 50%;
@@ -49,7 +50,8 @@
     top: -42px;
     left: -42px;
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 769px) {
+    display: block;
     width: 666px;
     height: 666px;
     top: -393px;
@@ -64,13 +66,15 @@
 }
 
 .logo {
+  display: none;
   width: 30px;
   height: 30px;
   position: absolute;
   top: 8px;
   left: 16px;
   fill: var(--accent_color);
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 769px) {
+    display: block;
     width: 60px;
     height: 60px;
     top: 81px;
@@ -79,6 +83,7 @@
 }
 
 .iconCloseBlog {
+  display: none;
   width: 108px;
   height: 108px;
   position: absolute;
@@ -87,7 +92,8 @@
   background-color: var(--modal_bg_color);
   border-radius: 50%;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 769px) {
+    display: block;
     width: 158px;
     height: 158px;
     top: -68px;
@@ -100,7 +106,7 @@
   border: none;
   cursor: pointer;
   position: absolute;
-  top: 8px;
+  top: 12px;
   right: 16px;
   @media screen and (min-width: 768px) {
     top: 20px;
@@ -118,11 +124,14 @@
 }
 
 .contactsContainer {
+  margin-top: 20px;
+  margin-bottom: 8px;
   display: flex;
   flex-direction: column;
   text-align: start;
   row-gap: 8px;
-  @media screen and (min-width: 768px) {
+
+  @media screen and (min-width: 769px) {
     row-gap: 32px;
     margin-top: 285px;
     margin-right: 73px;
