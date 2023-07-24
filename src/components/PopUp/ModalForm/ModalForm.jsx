@@ -1,8 +1,9 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
-import styles from "./modal.module.scss";
+import styles from "./ModalForm.module.scss";
+import { SiteContext } from "@/context/SiteContext";
 
 const ModalForm = () => {
   const [name, setName] = useState("");
@@ -10,14 +11,15 @@ const ModalForm = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
+  const { setModalVisible, setModalBackdrop } = useContext(SiteContext);
+
   //send email
 
   const form = useRef();
-  console.log(form.current);
+  // console.log(form.current);
 
   const sendEmail = (e) => {
-    // e.preventDefault();
-    console.log(form.current);
+    e.preventDefault();
     emailjs
       .sendForm(
         "service_cknjun9",
@@ -28,30 +30,27 @@ const ModalForm = () => {
       .then(
         (result) => {
           console.log(result.text);
+          console.log("yes");
         },
         (error) => {
           console.log(error.text);
+          console.log("no");
         }
       );
+
+    setModalBackdrop(false);
+
+    setTimeout(() => {
+      setModalVisible(false);
+    }, 3000);
 
     form.current.reset();
   };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   const data = {
-  //     name,
-  //     phone,
-  //     email,
-  //     message,
-  //   };
-  //   console.log(data);
-  // };
   return (
     <form
       className={styles.form}
-      action="/"
-      // onSubmit={handleSubmit}
+      // action="/"
       // method="post"
 
       ref={form}
@@ -63,7 +62,6 @@ const ModalForm = () => {
           className={styles.input}
           type="text"
           id="name"
-          // name="name"
           name="from_name"
           placeholder="Введіть ім’я"
           onChange={(e) => setName(e.target.value)}
@@ -76,7 +74,6 @@ const ModalForm = () => {
           className={styles.input}
           type="tel"
           id="phone"
-          // name="phone"
           name="user_phone"
           placeholder="Введіть номер"
           onChange={(e) => setPhone(e.target.value)}
@@ -89,7 +86,6 @@ const ModalForm = () => {
           className={styles.input}
           type="email"
           id="email"
-          // name="email"
           name="email_id"
           placeholder="Введіть пошту"
           onChange={(e) => setEmail(e.target.value)}

@@ -1,16 +1,24 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useContext } from "react";
 
 import Button from "@/components/Button/Button";
-import Modal from "@/components/Modal/Modal";
-import Application from "@/components/Modal/Application";
-import useModal from "@/helpers/modal";
 
 import styles from "./Hero.module.scss";
+import { SiteContext } from "@/context/SiteContext";
+import PopUp from "@/components/PopUp/PopUp";
 
 const Hero = () => {
-  const { showClick, openModal, closeModal, toggleModal } = useModal();
+  const { isModalVisible, setModalVisible, modalBackdrop, setModalBackdrop } =
+    useContext(SiteContext);
+
+  const openModal = () => {
+    setModalVisible(true);
+
+    setTimeout(() => {
+      setModalBackdrop(true);
+    }, 1000);
+  };
 
   return (
     <section className={styles.hero} id="hero">
@@ -20,14 +28,12 @@ const Hero = () => {
           <p className={styles.heroText}>
             Creating comfort for <span className={styles.heroItem}>YOU</span>
           </p>
-          <Button title="Залишити заявку" type="button" onClick={toggleModal} />
+
+          <Button title="Залишити заявку" type="button" onClick={openModal} />
         </div>
       </div>
-      {showClick && (
-        <Modal onClick={closeModal}>
-          <Application onClick={closeModal} />
-        </Modal>
-      )}
+
+      {isModalVisible && <PopUp />}
     </section>
   );
 };

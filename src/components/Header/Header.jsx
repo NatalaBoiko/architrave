@@ -1,18 +1,24 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import Image from "next/image";
 import styles from "./Header.module.scss";
 
 import { HeaderLinks } from "./HeaderLinks/HeaderLinks";
 import Button from "../Button/Button";
 import { HeaderMenuBtn } from "./HeaderMenuBtn/HeaderMenuBtn";
-import Modal from "../Modal/Modal";
-import Application from "../Modal/Application";
-import useModal from "@/helpers/modal";
+import { SiteContext } from "@/context/SiteContext";
 
 const Header = () => {
-  const { showClick, openModal, closeModal, toggleModal } = useModal();
+  const { setModalVisible, setModalBackdrop } = useContext(SiteContext);
+
+  const openModal = () => {
+    setModalVisible(true);
+
+    setTimeout(() => {
+      setModalBackdrop(true);
+    }, 1000);
+  };
 
   return (
     <header className={styles.header}>
@@ -31,13 +37,8 @@ const Header = () => {
         className={styles.btn}
         type="button"
         title="Напишіть нам"
-        onClick={toggleModal}
+        onClick={openModal}
       />
-      {showClick && (
-        <Modal onClick={closeModal}>
-          <Application onClick={closeModal} />
-        </Modal>
-      )}
     </header>
   );
 };
