@@ -42,7 +42,7 @@ const ModalForm = () => {
 
     setTimeout(() => {
       setModalVisible(false);
-    }, 3000);
+    }, 500);
 
     form.current.reset();
   };

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Image from "next/image";
 import styles from "./Header.module.scss";
 
@@ -10,14 +10,29 @@ import { HeaderMenuBtn } from "./HeaderMenuBtn/HeaderMenuBtn";
 import { SiteContext } from "@/context/SiteContext";
 
 const Header = () => {
-  const { setModalVisible, setModalBackdrop } = useContext(SiteContext);
+  const { isModalVisible, setModalVisible, setModalBackdrop } =
+    useContext(SiteContext);
+
+  const toggleScroll = () => {
+    console.log(scrollY);
+    if (!isModalVisible) return;
+    window.scrollTo({ top: 0 });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", toggleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", toggleScroll);
+    };
+  }, [toggleScroll]);
 
   const openModal = () => {
     setModalVisible(true);
 
     setTimeout(() => {
       setModalBackdrop(true);
-    }, 1000);
+    }, 100);
   };
 
   return (

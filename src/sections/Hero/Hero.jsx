@@ -17,7 +17,7 @@ const Hero = () => {
 
     setTimeout(() => {
       setModalBackdrop(true);
-    }, 1000);
+    }, 100);
   };
 
   return (

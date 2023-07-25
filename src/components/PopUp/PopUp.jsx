@@ -32,7 +32,7 @@ const PopUp = () => {
 
           setTimeout(() => {
             setModalVisible(false);
-          }, 3000);
+          }, 500);
         }}
       >
         <Application />

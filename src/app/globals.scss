@@ -32,6 +32,10 @@ body {
   min-height: 100vh;
   position: relative;
 }
+.stopScroll {
+  overflow: hidden;
+}
+
 main {
   display: flex;
   flex-direction: column;
