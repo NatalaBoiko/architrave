@@ -42,7 +42,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {isModalVisible && <PopUp />}
+      {/* {isModalVisible && <PopUp />} */}
     </section>
   );
 };
