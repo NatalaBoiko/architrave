@@ -1,13 +1,17 @@
 .form {
+  margin-top: 24px;
   display: flex;
+  align-items: center;
   flex-direction: column;
   max-width: 399px;
+  gap: 12px;
   @media screen and (min-width: 768px) {
     width: 399px;
   }
 }
 
 .label {
+  width: 100%;
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.32px;
@@ -16,9 +20,8 @@
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  margin-bottom: 4px;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 769px) {
     font-size: 24px;
     font-weight: 700;
     letter-spacing: 1.32px;
@@ -26,10 +29,6 @@
   &:hover,
   &:focus {
     color: var(--accent_color);
-  }
-
-  @media screen and (min-width: 768px) {
-    margin-bottom: 8px;
   }
 }
 
@@ -92,7 +91,6 @@
   border: none;
   background: var(--modal_bg_color);
   padding: 12px 20px;
-  margin: 0px auto 16px auto;
   cursor: pointer;
 
   @media screen and (min-width: 768px) {

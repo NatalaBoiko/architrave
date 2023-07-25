@@ -9,6 +9,20 @@ const PopUp = () => {
   const { isModalVisible, setModalVisible, modalBackdrop, setModalBackdrop } =
     useContext(SiteContext);
 
+  const closeModal = (e) => {
+    console.log(e.target);
+    console.log(e.currentTarget);
+    if (e.target !== e.currentTarget) {
+      return;
+    }
+
+    setModalBackdrop(false);
+
+    setTimeout(() => {
+      setModalVisible(false);
+    }, 1100);
+  };
+
   return (
     <div
       className={
