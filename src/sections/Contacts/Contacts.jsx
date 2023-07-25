@@ -1,5 +1,5 @@
-import React from 'react';
-import styles from './Contacts.module.scss';
+import React from "react";
+import styles from "./Contacts.module.scss";
 
 const Contacts = () => {
   return (
@@ -49,6 +49,7 @@ const Contacts = () => {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
+            title="Адреса на мапі"
           ></iframe>
         </div>
       </div>
