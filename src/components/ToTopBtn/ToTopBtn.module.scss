@@ -10,13 +10,20 @@
   outline: none;
   border: none;
   z-index: 2;
+  transition-duration: 500ms;
 
   & svg {
-    fill: rgba(255, 255, 255, 0.238);
-    stroke: var(--dark_fonf_color);
+    // fill: rgba(255, 255, 255, 0.238);
+    fill: var(--accent_color);
+    // stroke: var(--dark_fonf_color);
     width: 64px;
     height: 64px;
-    filter: brightness(3);
+    transition-duration: 500ms;
+  }
+  &:hover,
+  &:focus {
+    scale: 1.1;
+    filter: brightness(1.1);
   }
 }
 
