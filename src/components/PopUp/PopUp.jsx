@@ -10,8 +10,8 @@ const PopUp = () => {
     useContext(SiteContext);
 
   const closeModal = (e) => {
-    console.log(e.target);
-    console.log(e.currentTarget);
+    // console.log(e.target);
+    // console.log(e.currentTarget);
     if (e.target !== e.currentTarget) {
       return;
     }

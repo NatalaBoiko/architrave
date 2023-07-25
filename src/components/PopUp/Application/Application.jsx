@@ -12,7 +12,7 @@ const jura = Jura({
 });
 
 const Application = () => {
-  const { isModalVisible, setModalVisible, modalBackdrop, setModalBackdrop } =
+  const { setModalVisible, modalBackdrop, setModalBackdrop } =
     useContext(SiteContext);
 
   return (
@@ -32,7 +32,7 @@ const Application = () => {
         className={styles.btnClose}
         type="button"
         onClick={(e) => {
-          console.log(e.target);
+          // console.log(e.target);
           e.preventDefault();
 
           setModalBackdrop(false);

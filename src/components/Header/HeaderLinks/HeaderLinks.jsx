@@ -12,8 +12,8 @@ export const HeaderLinks = () => {
   const { menuBtnOn, closeMenu, toggleMenu } = useContext(SiteContext);
 
   const closeMenuByClicl = (e) => {
-    console.log(e.target.nodeName);
-    console.log(e.currentTarget);
+    // console.log(e.target.nodeName);
+    // console.log(e.currentTarget);
     if (e.target.nodeName !== "SECTION") {
       return;
     }
@@ -22,7 +22,7 @@ export const HeaderLinks = () => {
   };
 
   const toggleScroll = () => {
-    console.log(scrollY);
+    // console.log(scrollY);
     if (!menuBtnOn) return;
     window.scroll({
       top: 0,

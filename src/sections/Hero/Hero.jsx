@@ -9,7 +9,7 @@ import { SiteContext } from "@/context/SiteContext";
 import PopUp from "@/components/PopUp/PopUp";
 
 const Hero = () => {
-  const { isModalVisible, setModalVisible, modalBackdrop, setModalBackdrop } =
+  const { isModalVisible, setModalVisible, setModalBackdrop } =
     useContext(SiteContext);
 
   const openModal = () => {
@@ -24,10 +24,19 @@ const Hero = () => {
     <section className={styles.hero} id="hero">
       <div className={styles.heroContainer}>
         <div className={styles.heroContent}>
-          <h1 className={styles.heroTitle}>Творча майстерня АРХІТРАВ</h1>
-          <p className={styles.heroText}>
-            Creating comfort for <span className={styles.heroItem}>YOU</span>
-          </p>
+          <h1 className={styles.heroTitle}>
+            Творча майстерня
+            <span>АРХІТРАВ</span>
+          </h1>
+
+          <div className={styles.heroTextWrapper}>
+            <h2 className={styles.heroText}>
+              Creating comfort for <span className={styles.heroItem}>YOU</span>
+            </h2>
+          </div>
+          {/* <div className={styles.loader}>
+            <h2>Loader...</h2>
+          </div> */}
 
           <Button title="Залишити заявку" type="button" onClick={openModal} />
         </div>

@@ -14,7 +14,7 @@ const Header = () => {
     useContext(SiteContext);
 
   const toggleScroll = () => {
-    console.log(scrollY);
+    // console.log(scrollY);
     if (!isModalVisible) return;
     window.scroll({
       top: 0,
