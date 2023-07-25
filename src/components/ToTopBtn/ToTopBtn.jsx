@@ -33,6 +33,7 @@ const ToTopBtn = ({ id }) => {
     <button
       onClick={scrollToTop}
       className={isVisible ? styles.toTopBtn : styles.toTopBtnHidden}
+      title="Кнопка до верху сторінки"
     >
       <svg>
         <use href="./sprite.svg#icon-circle-up"></use>
