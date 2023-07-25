@@ -15,6 +15,17 @@ const Application = () => {
   const { setModalVisible, modalBackdrop, setModalBackdrop } =
     useContext(SiteContext);
 
+  const closeModal = (e) => {
+    // console.log(e.target);
+    e.preventDefault();
+
+    setModalBackdrop(false);
+
+    setTimeout(() => {
+      setModalVisible(false);
+    }, 500);
+  };
+
   return (
     <div
       className={
@@ -28,20 +39,7 @@ const Application = () => {
         <use href="/sprite.svg#icon-logo-architrave" />
       </svg>
       <div className={styles.iconCloseBlog} />
-      <button
-        className={styles.btnClose}
-        type="button"
-        onClick={(e) => {
-          // console.log(e.target);
-          e.preventDefault();
-
-          setModalBackdrop(false);
-
-          setTimeout(() => {
-            setModalVisible(false);
-          }, 500);
-        }}
-      >
+      <button className={styles.btnClose} type="button" onClick={closeModal}>
         <svg className={styles.close}>
           <use href="/sprite.svg#icon-cancelArchitrave" />
         </svg>
