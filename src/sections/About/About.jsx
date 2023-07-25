@@ -1,6 +1,6 @@
-import Image from 'next/image';
-import React from 'react';
-import styles from './About.module.scss';
+import Image from "next/image";
+import React from "react";
+import styles from "./About.module.scss";
 
 const About = () => {
   return (
@@ -22,7 +22,7 @@ const About = () => {
         </p>
         <div className={styles.aboutImgContainer}>
           <Image
-            src="/skyscraper.jpg"
+            src="/skyscraper.webp"
             alt="skyscraper"
             fill={true}
             className={styles.aboutImg}
