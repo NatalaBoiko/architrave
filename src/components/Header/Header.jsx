@@ -16,7 +16,9 @@ const Header = () => {
   const toggleScroll = () => {
     console.log(scrollY);
     if (!isModalVisible) return;
-    window.scrollTo({ top: 0 });
+    window.scroll({
+      top: 0,
+    });
   };
 
   useEffect(() => {

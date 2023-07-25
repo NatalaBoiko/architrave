@@ -13,6 +13,14 @@ const ModalForm = () => {
 
   const { setModalVisible, setModalBackdrop } = useContext(SiteContext);
 
+  const closeModal = () => {
+    setModalBackdrop(false);
+
+    setTimeout(() => {
+      setModalVisible(false);
+    }, 500);
+  };
+
   //send email
 
   const form = useRef();
@@ -38,11 +46,7 @@ const ModalForm = () => {
         }
       );
 
-    setModalBackdrop(false);
-
-    setTimeout(() => {
-      setModalVisible(false);
-    }, 500);
+    closeModal();
 
     form.current.reset();
   };

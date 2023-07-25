@@ -11,6 +11,34 @@ import { SiteContext } from "@/context/SiteContext";
 export const HeaderLinks = () => {
   const { menuBtnOn, closeMenu, toggleMenu } = useContext(SiteContext);
 
+  const closeMenuByClicl = (e) => {
+    console.log(e.target.nodeName);
+    console.log(e.currentTarget);
+    if (e.target.nodeName !== "SECTION") {
+      return;
+    }
+
+    closeMenu();
+  };
+
+  const toggleScroll = () => {
+    console.log(scrollY);
+    if (!menuBtnOn) return;
+    window.scroll({
+      top: 0,
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", toggleScroll);
+    window.addEventListener("click", closeMenuByClicl);
+
+    return () => {
+      window.removeEventListener("scroll", toggleScroll);
+      window.removeEventListener("click", closeMenuByClicl);
+    };
+  }, [toggleScroll]);
+
   useEffect(() => {
     const onKeydown = (e) => {
       if (e.code !== "Escape") return;
