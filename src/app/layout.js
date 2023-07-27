@@ -20,7 +20,14 @@ export const metadata = {
   title: "Architrave",
   description:
     "Архітекртура, проектування будівель, споруд та індивідуальних житлових будинків.",
+  alternates: {
+    canonical: "https://andezyan-build-site.vercel.app/",
+  },
 };
+
+{
+  /* <link rel='canonical' href='... the page URL ...' /> */
+}
 
 export default function RootLayout({ children }) {
   return (
