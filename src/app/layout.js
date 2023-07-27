@@ -25,10 +25,6 @@ export const metadata = {
   },
 };
 
-{
-  /* <link rel='canonical' href='... the page URL ...' /> */
-}
-
 export default function RootLayout({ children }) {
   return (
     <html lang="uk">
