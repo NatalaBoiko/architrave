@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /accounts
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.architrave.online/api/sitemap.xml
