@@ -21,7 +21,7 @@ export const metadata = {
   description:
     "Архітекртура, проектування будівель, споруд та індивідуальних житлових будинків.",
   alternates: {
-    canonical: "https://andezyan-build-site.vercel.app/",
+    canonical: "https://www.architrave.online/",
   },
 };
 
