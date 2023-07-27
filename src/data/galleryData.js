@@ -24,10 +24,10 @@ export const galleryData = [
     url: "https://res.cloudinary.com/dtelxxva7/image/upload/v1690471026/architrave/3DD09E3F-48F9-4900-9AB6-935D312FCF63_onih3a_mq6oje.jpg",
   },
 
-  {
-    id: v4(),
-    url: "https://res.cloudinary.com/dtelxxva7/image/upload/v1690471195/architrave/73B7639F-729A-4E7A-A6A4-424228DD7501_fpkmwu_vounzz.jpg",
-  },
+  // {
+  //   id: v4(),
+  //   url: "https://res.cloudinary.com/dtelxxva7/image/upload/v1690471195/architrave/73B7639F-729A-4E7A-A6A4-424228DD7501_fpkmwu_vounzz.jpg",
+  // },
   {
     id: v4(),
     url: "https://res.cloudinary.com/dtelxxva7/image/upload/v1690471095/architrave/9F5A164C-5D32-465A-B55A-8B078FD9185E_oxhfkl_w4mm3p.jpg",
@@ -44,10 +44,7 @@ export const galleryData = [
     id: v4(),
     url: "https://res.cloudinary.com/dtelxxva7/image/upload/v1690471335/architrave/75244965-A21E-4552-BED4-FC6C19B5CBB0_n9fz6l_l8nwhx.jpg",
   },
-  {
-    id: v4(),
-    url: "https://res.cloudinary.com/dtelxxva7/image/upload/v1690471524/architrave/AC83BE16-18E7-4DA4-9095-FA96E9CB34E9_spq6iz_jxxuox.jpg",
-  },
+
   {
     id: v4(),
     url: "https://res.cloudinary.com/dtelxxva7/image/upload/v1690471407/architrave/78F77A23-8186-469F-A57B-87E34CAAC67E_qxsd6f_klw8ip.jpg",
