@@ -97,12 +97,11 @@
 
 .heroTextWrapper {
   overflow: hidden;
-  // width: 100px;
-  height: min-content;
   border-right: 2px solid white;
-  animation: qwe 6s steps(23) 1s forwards;
+  animation: qwe 4s steps(23) 1s forwards;
   width: 127px;
   opacity: 0;
+
   @media screen and (min-width: 768px) {
     width: 336px;
   }
@@ -117,7 +116,6 @@
   }
   100% {
     opacity: 1;
-
     width: 100%;
     border-right: none;
   }
@@ -147,7 +145,7 @@
 
 .heroBtn {
   opacity: 0;
-  animation: heroBtn 1s linear 4s normal forwards;
+  animation: heroBtn 1s linear 5s normal forwards;
 }
 
 @keyframes heroBtn {
