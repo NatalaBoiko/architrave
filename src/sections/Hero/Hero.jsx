@@ -38,7 +38,12 @@ const Hero = () => {
             <h2>Loader...</h2>
           </div> */}
 
-          <Button title="Залишити заявку" type="button" onClick={openModal} />
+          <Button
+            title="Залишити заявку"
+            type="button"
+            onClick={openModal}
+            className={styles.heroBtn}
+          />
         </div>
       </div>
 
