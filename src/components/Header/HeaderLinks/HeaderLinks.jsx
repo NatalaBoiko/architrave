@@ -21,39 +21,28 @@ export const HeaderLinks = () => {
     closeMenu();
   };
 
-  const toggleScroll = () => {
-    // console.log(scrollY);
-    if (!menuBtnOn) return;
-    window.scroll({
-      top: 0,
-    });
+  const onKeydown = (e) => {
+    // console.log(e.code);
+    if (e.code !== "Escape") return;
+    closeMenu();
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", toggleScroll);
     window.addEventListener("click", closeMenuByClicl);
-
-    return () => {
-      window.removeEventListener("scroll", toggleScroll);
-      window.removeEventListener("click", closeMenuByClicl);
-    };
-  }, [toggleScroll]);
-
-  useEffect(() => {
-    const onKeydown = (e) => {
-      if (e.code !== "Escape") return;
-      closeMenu();
-    };
-
     window.addEventListener("keydown", onKeydown);
 
     return () => {
+      window.removeEventListener("click", closeMenuByClicl);
       window.removeEventListener("keydown", onKeydown);
     };
-  }, [closeMenu]);
+  }, [closeMenuByClicl, onKeydown]);
 
   return (
     <ul
+      onClick={(e) => {
+        e.stopPropagation();
+      }}
+      id="headerLinks"
       className={
         menuBtnOn
           ? `${styles.headerLinks} ${styles.visible}`

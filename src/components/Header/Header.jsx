@@ -10,24 +10,7 @@ import { HeaderMenuBtn } from "./HeaderMenuBtn/HeaderMenuBtn";
 import { SiteContext } from "@/context/SiteContext";
 
 const Header = () => {
-  const { isModalVisible, setModalVisible, setModalBackdrop } =
-    useContext(SiteContext);
-
-  const toggleScroll = () => {
-    // console.log(scrollY);
-    if (!isModalVisible) return;
-    window.scroll({
-      top: 0,
-    });
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", toggleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", toggleScroll);
-    };
-  }, [toggleScroll]);
+  const { setModalVisible, setModalBackdrop } = useContext(SiteContext);
 
   const openModal = () => {
     setModalVisible(true);

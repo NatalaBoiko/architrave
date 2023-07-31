@@ -9,8 +9,7 @@ import { SiteContext } from "@/context/SiteContext";
 import PopUp from "@/components/PopUp/PopUp";
 
 const Hero = () => {
-  const { isModalVisible, setModalVisible, setModalBackdrop } =
-    useContext(SiteContext);
+  const { setModalVisible, setModalBackdrop } = useContext(SiteContext);
 
   const openModal = () => {
     setModalVisible(true);
