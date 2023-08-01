@@ -1,7 +1,7 @@
 "use client";
 
 import { SiteContext } from "@/context/SiteContext";
-import React, { useCallback, useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import Application from "./Application/Application";
 import styles from "./PopUp.module.scss";
 
