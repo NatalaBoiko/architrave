@@ -7,7 +7,7 @@ export const SiteProvider = ({ children }) => {
   const [menuBtnOn, setMenuBtnOn] = useState(false);
   // console.log(menuBtnOn);
   const [isModalVisible, setModalVisible] = useState(false);
-  // console.log(isModalVisible);
+  console.log(isModalVisible);
   const [modalBackdrop, setModalBackdrop] = useState(false);
 
   const openMenu = () => {

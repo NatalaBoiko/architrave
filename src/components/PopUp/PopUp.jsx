@@ -1,7 +1,7 @@
 "use client";
 
 import { SiteContext } from "@/context/SiteContext";
-import React, { useContext, useEffect } from "react";
+import React, { useCallback, useContext, useEffect, useState } from "react";
 import Application from "./Application/Application";
 import styles from "./PopUp.module.scss";
 
@@ -36,6 +36,10 @@ const PopUp = () => {
     }
   };
 
+  isModalVisible
+    ? document.body.classList.add("stopScroll")
+    : document.body.classList.remove("stopScroll");
+
   useEffect(() => {
     window.addEventListener("keydown", onKeydown);
 
@@ -43,21 +47,6 @@ const PopUp = () => {
       window.removeEventListener("keydown", onKeydown);
     };
   }, [onKeydown]);
-
-  useEffect(() => {
-    if (isModalVisible) {
-      // Prevent scrolling when the modal is open
-      document.body.classList.add("stop-scroll");
-    } else {
-      // Allow scrolling when the modal is closed
-      document.body.classList.remove("stop-scroll");
-    }
-
-    return () => {
-      // Revert back to default when the component unmounts
-      document.body.classList.remove("stop-scroll");
-    };
-  }, [isModalVisible]);
 
   return (
     <div
