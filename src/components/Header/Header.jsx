@@ -12,8 +12,7 @@ import { SiteContext } from "@/context/SiteContext";
 const Header = () => {
   const { setModalVisible, setModalBackdrop } = useContext(SiteContext);
 
-  const openModal = (e) => {
-    e.preventDefault();
+  const openModal = () => {
     setModalVisible(true);
 
     setTimeout(() => {
