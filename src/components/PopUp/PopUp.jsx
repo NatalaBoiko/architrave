@@ -9,6 +9,10 @@ const PopUp = () => {
   const { isModalVisible, setModalVisible, modalBackdrop, setModalBackdrop } =
     useContext(SiteContext);
 
+  isModalVisible
+    ? (document.body.style.overflow = "hidden")
+    : (document.body.style.overflow = "auto");
+
   const closeModal = (e) => {
     // console.log(e.target);
     // console.log(e.currentTarget);
@@ -35,10 +39,6 @@ const PopUp = () => {
       return;
     }
   };
-
-  isModalVisible
-    ? (document.body.style.overflow = "hidden")
-    : (document.body.style.overflow = "auto");
 
   useEffect(() => {
     window.addEventListener("keydown", onKeydown);
