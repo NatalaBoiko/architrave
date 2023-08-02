@@ -9,9 +9,11 @@ const PopUp = () => {
   const { isModalVisible, setModalVisible, modalBackdrop, setModalBackdrop } =
     useContext(SiteContext);
 
-  isModalVisible
-    ? (document.body.style.overflow = "hidden")
-    : (document.body.style.overflow = "auto");
+  // isModalVisible
+  //   ? (document.body.style.overflow = "hidden")
+  //   : (document.body.style.overflow = "auto");
+
+  // console.log(document.body.style.overflow);
 
   function closeModal(e) {
     // console.log(e.target);
@@ -47,6 +49,21 @@ const PopUp = () => {
       window.removeEventListener("keydown", onKeydown);
     };
   }, [onKeydown]);
+
+  useEffect(() => {
+    if (isModalVisible) {
+      // Prevent scrolling when the modal is open
+      document.body.style.overflow = "hidden";
+    } else {
+      // Allow scrolling when the modal is closed
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      // Revert back to default when the component unmounts
+      document.body.style.overflow = "auto";
+    };
+  }, [isModalVisible]);
 
   return (
     <div
