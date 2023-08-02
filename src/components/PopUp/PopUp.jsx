@@ -36,9 +36,9 @@ const PopUp = () => {
     }
   };
 
-  // isModalVisible
-  //   ? document.body.classList.add("stopScroll")
-  //   : document.body.classList.remove("stopScroll");
+  isModalVisible
+    ? (document.body.style.overflow = "hidden")
+    : (document.body.style.overflow = "auto");
 
   useEffect(() => {
     window.addEventListener("keydown", onKeydown);
