@@ -13,7 +13,7 @@ const PopUp = () => {
     ? (document.body.style.overflow = "hidden")
     : (document.body.style.overflow = "auto");
 
-  const closeModal = (e) => {
+  function closeModal(e) {
     // console.log(e.target);
     // console.log(e.currentTarget);
     if (e.target !== e.currentTarget) {
@@ -25,7 +25,7 @@ const PopUp = () => {
     setTimeout(() => {
       setModalVisible(false);
     }, 500);
-  };
+  }
 
   const onKeydown = (e) => {
     if (isModalVisible && e.code === "Escape") {
