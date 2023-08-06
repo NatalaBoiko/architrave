@@ -9,7 +9,7 @@ export const suggestionsData = [
   {
     id: "2",
     src: "https://res.cloudinary.com/dtelxxva7/image/upload/v1689181690/archi-suggestions/2_lqektz.png",
-    alt: "Багато поверхівки",
+    alt: "Багатоквартирні будинки",
   },
   {
     id: "3",
