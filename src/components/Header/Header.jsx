@@ -8,6 +8,8 @@ import { HeaderLinks } from "./HeaderLinks/HeaderLinks";
 import Button from "../Button/Button";
 import { HeaderMenuBtn } from "./HeaderMenuBtn/HeaderMenuBtn";
 import { SiteContext } from "@/context/SiteContext";
+import Link from "next/link";
+import { handleScroll } from "@/helpers/handleScroll";
 
 const Header = () => {
   const { setModalVisible, setModalBackdrop } = useContext(SiteContext);
@@ -24,13 +26,15 @@ const Header = () => {
     <header className={styles.header}>
       <HeaderMenuBtn />
 
-      <Image
-        src="/logo.png"
-        width={60}
-        height={50}
-        alt="logo"
-        className={styles.logo}
-      />
+      <Link href="#hero" scroll={false} onClick={handleScroll}>
+        <Image
+          src="/logo.png"
+          width={60}
+          height={50}
+          alt="logo"
+          className={styles.logo}
+        />
+      </Link>
 
       <HeaderLinks />
       <Button
