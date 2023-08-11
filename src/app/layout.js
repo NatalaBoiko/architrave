@@ -3,6 +3,8 @@ import { KoHo, Caveat } from "next/font/google";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import { SiteProvider } from "@/context/SiteContext";
+import PopUp from "@/components/PopUp/PopUp";
+import Application from "@/components/PopUp/Application/Application";
 
 const koho = KoHo({
   subsets: ["latin"],
@@ -33,6 +35,9 @@ export default function RootLayout({ children }) {
           <Header />
           <main>{children}</main>
           <Footer caveat={caveat} />
+          <PopUp>
+            <Application />
+          </PopUp>
         </SiteProvider>
       </body>
     </html>

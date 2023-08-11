@@ -2,10 +2,9 @@
 
 import { SiteContext } from "@/context/SiteContext";
 import React, { useContext, useEffect } from "react";
-import Application from "./Application/Application";
 import styles from "./PopUp.module.scss";
 
-const PopUp = () => {
+const PopUp = ({ children }) => {
   const { isModalVisible, setModalVisible, modalBackdrop, setModalBackdrop } =
     useContext(SiteContext);
 
@@ -79,7 +78,7 @@ const PopUp = () => {
         }
         onClick={closeModal}
       >
-        <Application />
+        {children}
       </div>
     </div>
   );

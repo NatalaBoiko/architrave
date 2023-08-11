@@ -1,3 +1,5 @@
+"use client";
+
 import { SiteContext } from "@/context/SiteContext";
 import { Jura } from "next/font/google";
 import { useContext } from "react";

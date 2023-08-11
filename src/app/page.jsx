@@ -1,4 +1,3 @@
-import PopUp from "@/components/PopUp/PopUp";
 import ToTopBtn from "@/components/ToTopBtn/ToTopBtn";
 import About from "@/sections/About/About";
 import Contacts from "@/sections/Contacts/Contacts";
@@ -15,7 +14,6 @@ export default function Home() {
       <Gallery />
       <Contacts />
       <ToTopBtn />
-      <PopUp />
     </>
   );
 }
