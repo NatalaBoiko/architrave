@@ -48,21 +48,21 @@ const Application = () => {
       </button>
       <div className={`${styles.contactsContainer} ${jura.className}`}>
         <p className={styles.text}>або зв’яжіться з нами</p>
-        <a href="tel:+380503738465" className={styles.contactsAdress}>
+        <a href="tel:+380503738460" className={styles.contactsAdress}>
           <svg className={styles.icon}>
             <use href="/sprite.svg#icon-tell-modal" />
           </svg>
-          +380503738465
+          +380503738460
         </a>
 
         <a
-          href="mailto:natalabojko@gmail.com"
+          href="mailto:ppnaz@ukr.net"
           className={styles.contactsAdress}
         >
           <svg className={styles.icon}>
             <use href="/sprite.svg#icon-email-modal" />
           </svg>
-          natalabojko@gmail.com
+          ppnaz@ukr.net
         </a>
       </div>
       <ModalForm />
