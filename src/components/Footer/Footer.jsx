@@ -12,7 +12,6 @@ const Footer = ({ caveat }) => {
         className={`${caveat.className} ${styles.title}`}
       >
         <h2 className={styles.animateCharcter}>webevery.dev</h2>
-        <p>made by</p>
       </Link>
     </footer>
   );

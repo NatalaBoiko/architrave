@@ -1,30 +1,9 @@
 .footer {
-  background: var(--footer_bg_color);
-  bottom: 0;
+  background-color: var(--contact_bg_color);
 
-  // & a {
-  //   width: 100%;
-
-  //   color: #fff;
-  //   text-align: center;
-  //   // font-family: Caveat;
-  //   line-height: 1;
-  //   font-size: 16px;
-
-  //   padding: 12px;
-  // & h2 {
-  //   font-size: 32px;
-  // }
-
-  // &:hover,
-  // &:focus {
-  //   h2 {
-  //     filter: brightness(3);
-  //     scale: 1.2;
-  //     text-shadow: 0px 0px 1px rgb(252, 251, 251);
-  //   }
-  // }
-  // }
+  -webkit-box-shadow: 0px -1px 0px 0px rgba(141, 141, 141, 0.3);
+  -moz-box-shadow: 0px -1px 0px 0px rgba(141, 141, 141, 0.3);
+  box-shadow: 0px -1px 0px 0px rgba(141, 141, 141, 0.3);
 }
 
 .title {
@@ -42,57 +21,28 @@
   padding: 12px;
 }
 
-// .animateCharcter {
-//   &:hover,
-//   &:focus {
-//     width: 100%;
-//     font-size: 32px;
-//     background-image: linear-gradient(
-//       -225deg,
-//       #231557 0%,
-//       #44107a 29%,
-//       #ff1361 67%,
-//       #fff800 100%
-//     );
-//     -webkit-background-clip: text;
-//     background-clip: text;
-//     -webkit-text-fill-color: transparent;
-//     text-fill-color: transparent;
-//     background-size: 500% auto;
-//     animation: textShine 2s ease-in-out infinite alternate;
-//   }
-// }
-// @keyframes textShine {
-//   0% {
-//     background-position: 0% 50%;
-//   }
-//   100% {
-//     background-position: 100% 50%;
-//   }
-// }
-
 .title:hover,
 .title:focus {
   & .animateCharcter {
     width: 100%;
     background-image: linear-gradient(
       -225deg,
-      #231557 0%,
-      #44107a 29%,
-      #ff1361 67%,
-      #fff800 100%
+      rgb(215, 233, 185),
+      rgb(255, 251, 172),
+      rgb(255, 212, 149),
+      rgb(250, 171, 120)
     );
+
     background-size: auto auto;
     background-clip: border-box;
     background-size: 200% auto;
     color: #fff;
     background-clip: text;
-    // text-fill-color: transparent;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: textclip 2s linear infinite;
     display: inline-block;
-    scale: 1.2;
+    scale: 1.05;
   }
 
   @keyframes textclip {
@@ -101,35 +51,3 @@
     }
   }
 }
-
-// .animateCharcter {
-//   &:hover,
-//   &:focus {
-//     width: 100%;
-//     background-image: linear-gradient(
-//       -225deg,
-//       #231557 0%,
-//       #44107a 29%,
-//       #ff1361 67%,
-//       #fff800 100%
-//     );
-//     background-size: auto auto;
-//     background-clip: border-box;
-//     background-size: 200% auto;
-//     color: #fff;
-//     background-clip: text;
-//     text-fill-color: transparent;
-//     -webkit-background-clip: text;
-//     -webkit-text-fill-color: transparent;
-//     animation: textclip 2s linear infinite;
-//     display: inline-block;
-
-//     font-size: 32px;
-//   }
-
-//   @keyframes textclip {
-//     to {
-//       background-position: 200% center;
-//     }
-//   }
-// }

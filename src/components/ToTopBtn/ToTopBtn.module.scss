@@ -13,9 +13,7 @@
   transition-duration: 500ms;
 
   & svg {
-    // fill: rgba(255, 255, 255, 0.238);
     fill: var(--accent_color);
-    // stroke: var(--dark_fonf_color);
     width: 64px;
     height: 64px;
     transition-duration: 500ms;
@@ -24,6 +22,11 @@
   &:focus {
     scale: 1.1;
     filter: brightness(1.1);
+  }
+  @media screen and (max-width: 767px) {
+    scale: 0.9;
+    right: 16px;
+    bottom: 16px;
   }
 }
 
