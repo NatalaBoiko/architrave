@@ -1,9 +1,11 @@
 .hero {
-  height: 290px;
+  height: 50vh;
   width: 100%;
-  position: relative;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
   align-items: center;
-  box-shadow: 0px 4px 4px 0px #00000040, 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 1px 3px black;
 
   background-image: linear-gradient(
       0deg,
@@ -15,11 +17,18 @@
   background-repeat: no-repeat;
   background-position: 100% 100%;
 
-  display: flex;
-  align-items: center;
-
-  @media screen and (min-width: 768px) {
-    height: 800px;
+  @media screen and (min-width: 768px) and (orientation: landscape) {
+    height: 100vh;
+    gap: 104px;
+    padding-top: 48px;
+  }
+  @media screen and (min-width: 768px) and (orientation: portrait) {
+    height: 50vh;
+    gap: 64px;
+  }
+  @media screen and (max-height: 500px) {
+    gap: 48px;
+    height: 100vh;
   }
 }
 
@@ -49,6 +58,7 @@
   text-align: center;
 
   font-size: 16px;
+  font-size: clamp(1rem, 0.429rem + 2.857vw, 3rem);
   font-weight: 400;
   letter-spacing: 0.32px;
 
@@ -69,6 +79,7 @@
   & span {
     font-weight: bolder;
     font-size: 20px;
+    // font-size: clamp(1.25rem, 0.464rem + 3.929vw, 4rem);
     @media screen and (min-width: 768px) {
       font-size: 64px;
       letter-spacing: 0.96px;
@@ -98,15 +109,17 @@
 .heroTextWrapper {
   overflow: hidden;
   border-right: 2px solid white;
-  animation: qwe 4s steps(23) 1s forwards;
+  animation: typing 4s steps(23) 1s forwards;
   width: 127px;
+
   opacity: 0;
 
   @media screen and (min-width: 768px) {
     width: 336px;
+    animation: typingLarge 4s steps(23) 1s forwards;
   }
 }
-@keyframes qwe {
+@keyframes typing {
   0% {
     opacity: 1;
     width: 0%;
@@ -116,7 +129,22 @@
   }
   100% {
     opacity: 1;
-    width: 100%;
+    width: 127px;
+    border-right: none;
+  }
+}
+
+@keyframes typingLarge {
+  0% {
+    opacity: 1;
+    width: 0%;
+  }
+  99% {
+    border-right: 2px solid white;
+  }
+  100% {
+    opacity: 1;
+    width: 338px;
     border-right: none;
   }
 }
@@ -128,8 +156,6 @@
   font-weight: 500;
   letter-spacing: -0.24px;
   width: 127px;
-  margin-right: auto;
-  margin-left: auto;
 
   @media screen and (min-width: 768px) {
     font-size: 32px;

@@ -21,32 +21,23 @@ const Hero = () => {
 
   return (
     <section className={styles.hero} id="hero">
-      <div className={styles.heroContainer}>
-        <div className={styles.heroContent}>
-          <h1 className={styles.heroTitle}>
-            Творча майстерня
-            <span>АРХІТРАВ</span>
-          </h1>
+      <h1 className={styles.heroTitle}>
+        Творча майстерня
+        <span>АРХІТРАВ</span>
+      </h1>
 
-          <div className={styles.heroTextWrapper}>
-            <h2 className={styles.heroText}>
-              Creating comfort for <span className={styles.heroItem}>YOU</span>
-            </h2>
-          </div>
-          {/* <div className={styles.loader}>
-            <h2>Loader...</h2>
-          </div> */}
-
-          <Button
-            title="Залишити заявку"
-            type="button"
-            onClick={openModal}
-            className={styles.heroBtn}
-          />
-        </div>
+      <div className={styles.heroTextWrapper}>
+        <h2 className={styles.heroText}>
+          Creating comfort for <span className={styles.heroItem}>YOU</span>
+        </h2>
       </div>
 
-      {/* {isModalVisible && <PopUp />} */}
+      <Button
+        title="Залишити заявку"
+        type="button"
+        onClick={openModal}
+        className={styles.heroBtn}
+      />
     </section>
   );
 };
