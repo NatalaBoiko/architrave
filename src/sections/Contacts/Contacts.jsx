@@ -8,18 +8,18 @@ const Contacts = () => {
       <div className={styles.contactsContent}>
         <address className={styles.contactsList}>
           <div className={styles.contactsAdressContainer}>
-            <a href="tel:+380503738465" className={styles.contactsAdress}>
+            <a href="tel:+380503738460" className={styles.contactsAdress}>
               <div className={styles.contactsIcon}>
                 <svg className={styles.icon}>
                   <use href="/sprite.svg#icon-telArchitrave" />
                 </svg>
               </div>
-              +380503738465
+              +380503738460
             </a>
           </div>
           <div className={styles.contactsAdressContainer}>
             <a
-              href="mailto:natalabojko@gmail.com"
+              href="mailto:ppnaz@ukr.net"
               className={styles.contactsAdress}
             >
               <div className={styles.contactsIcon}>
@@ -27,7 +27,7 @@ const Contacts = () => {
                   <use href="/sprite.svg#icon-emailArchitrave" />
                 </svg>
               </div>
-              natalabojko@gmail.com
+            ppnaz@ukr.net
             </a>
           </div>
           <div className={styles.contactsAdressContainer}>
