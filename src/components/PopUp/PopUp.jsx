@@ -12,15 +12,12 @@ const PopUp = ({ children }) => {
   //   ? (document.body.style.overflow = "hidden")
   //   : (document.body.style.overflow = "auto");
 
-  // console.log(document.body.style.overflow);
-
   function closeModal(e) {
     // console.log(e.target);
     // console.log(e.currentTarget);
     if (e.target !== e.currentTarget) {
       return;
     }
-
     setModalBackdrop(false);
 
     setTimeout(() => {
@@ -65,22 +62,26 @@ const PopUp = ({ children }) => {
   }, [isModalVisible]);
 
   return (
-    <div
-      className={
-        isModalVisible ? styles.modalWrapperVisible : styles.modalWrapper
-      }
-    >
-      <div
-        className={
-          modalBackdrop
-            ? `${styles.backDrop} ${styles.backDropVisible}`
-            : `${styles.backDrop}`
-        }
-        onClick={closeModal}
-      >
-        {children}
-      </div>
-    </div>
+    <>
+      {isModalVisible && (
+        <div
+          className={
+            isModalVisible ? styles.modalWrapperVisible : styles.modalWrapper
+          }
+        >
+          <div
+            className={
+              modalBackdrop
+                ? `${styles.backDrop} ${styles.backDropVisible}`
+                : `${styles.backDrop}`
+            }
+            onClick={closeModal}
+          >
+            {children}
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
