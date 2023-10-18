@@ -74,10 +74,9 @@
   max-width: 390px;
   @media screen and (min-width: 768px) {
     max-width: 752px;
-
-    @media screen and (min-width: 1224px) {
-      max-width: 493px;
-    }
+  }
+  @media screen and (min-width: 1224px) {
+    max-width: 493px;
   }
 }
 .aboutTextPosition {

@@ -12,12 +12,27 @@
 
   filter: drop-shadow(2px 4px 6px black);
 
+  & .btn {
+    display: block;
+
+    width: 150px;
+    height: 36px;
+    border-radius: 42px;
+    @media screen and (max-width: 900px) {
+      display: none;
+    }
+  }
+
   @media screen and (max-width: 900px) {
     background-color: transparent;
   }
 
   @media screen and (min-width: 1025px) {
     padding: 16px 32px;
+  }
+  @media screen and (max-height: 500px) {
+    background-color: transparent;
+    box-shadow: none;
   }
 }
 
@@ -60,6 +75,9 @@
 .btn {
   display: block;
 
+  width: 150px;
+  height: 36px;
+  border-radius: 42px;
   @media screen and (max-width: 900px) {
     display: none;
   }
