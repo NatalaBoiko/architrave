@@ -9,9 +9,9 @@ const Footer = ({ caveat }) => {
         href="https://webevery.dev/"
         target="_blank"
         rel="noopener noreferrer"
-        className={`${caveat.className} ${styles.title}`}
+        className={caveat.className}
       >
-        <h2 className={styles.animateCharcter}>webevery.dev</h2>
+        webevery.dev
       </Link>
     </footer>
   );
