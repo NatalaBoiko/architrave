@@ -37,6 +37,17 @@ export const HeaderLinks = () => {
     };
   }, [closeMenuByClicl, onKeydown]);
 
+  useEffect(() => {
+    if (menuBtnOn) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [menuBtnOn]);
+
   return (
     <ul
       onClick={(e) => {

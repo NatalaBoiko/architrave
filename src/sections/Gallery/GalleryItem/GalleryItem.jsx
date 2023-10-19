@@ -41,17 +41,12 @@ export const GalleryItem = () => {
   return (
     <div className={styles.swiperContainer}>
       <Swiper
-        modules={[FreeMode, Navigation, Thumbs, Mousewheel, Keyboard]}
+        modules={[FreeMode, Navigation, Thumbs, Keyboard]}
         loop={true}
-        // pagination={{
-        //   clickable: true,
-        //   dynamicBullets: true,
-        // }}
-        mousewheel={true}
-        // style={{
-        //   "--swiper-navigation-color": "#fff",
-        //   "--swiper-pagination-color": "#fff",
-        // }}
+        style={{
+          "--swiper-navigation-color": "#fff",
+          "--swiper-pagination-color": "#fff",
+        }}
         spaceBetween={10}
         navigation={true}
         thumbs={{ swiper: thumbsSwiper }}
