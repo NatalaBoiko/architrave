@@ -26,6 +26,10 @@ const About = () => {
             alt="skyscraper"
             fill={true}
             className={styles.aboutImg}
+            sizes="(min-width: 426px ) 50vw,
+                (min-width: 768px) 33vw,
+                (min-width: 976px) 25vw,
+                100vw"
           />
         </div>
       </div>
