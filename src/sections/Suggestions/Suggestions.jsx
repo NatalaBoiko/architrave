@@ -8,11 +8,19 @@ const Suggestions = () => {
     <section id="suggestions" className={styles.suggestions}>
       <h2>Наші пропозиції</h2>
       <ul className={styles.suggestionsList}>
-        {suggestionsData.map(({ id, src, alt }) => {
+        {suggestionsData.map(({ id, src, alt, title }) => {
           return (
             <li key={id}>
-              <Image src={src} alt={alt} fill={true} />
-              <h3>{alt}</h3>
+              <Image
+                src={src}
+                alt={alt}
+                fill={true}
+                sizes="(min-width: 426px ) 50vw,
+                (min-width: 768px) 33vw,
+                (min-width: 976px) 25vw,
+                100vw"
+              />
+              <h3>{title}</h3>
             </li>
           );
         })}

@@ -26,13 +26,21 @@ const Header = () => {
     <header className={styles.header}>
       <HeaderMenuBtn />
 
-      <Link href="#hero" scroll={false} onClick={handleScroll}>
+      <Link
+        href="#hero"
+        scroll={false}
+        onClick={handleScroll}
+        className={styles.headerLogoWrapper}
+      >
         <Image
           src="/logo.png"
-          width={60}
-          height={50}
+          fill={true}
           alt="logo"
           className={styles.logo}
+          sizes="(min-width: 426px ) 50vw,
+                (min-width: 768px) 33vw,
+                (min-width: 976px) 25vw,
+                100vw"
         />
       </Link>
 
