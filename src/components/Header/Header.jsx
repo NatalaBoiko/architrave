@@ -37,10 +37,7 @@ const Header = () => {
           fill={true}
           alt="logo"
           className={styles.logo}
-          sizes="(min-width: 426px ) 50vw,
-                (min-width: 768px) 33vw,
-                (min-width: 976px) 25vw,
-                100vw"
+          sizes="(min-width: 780px) 60px, (min-width: 440px) 48px, 32px"
         />
       </Link>
 
