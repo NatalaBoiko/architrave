@@ -35,7 +35,7 @@ const Header = () => {
         <Image
           src="/logo.png"
           fill={true}
-          alt="logo"
+          alt="logo Архітрав"
           className={styles.logo}
           sizes="(min-width: 780px) 60px, (min-width: 440px) 48px, 32px"
         />

@@ -6,6 +6,7 @@ import { SiteProvider } from "@/context/SiteContext";
 // import PopUp from "@/components/PopUp/PopUp";
 // import Application from "@/components/PopUp/Application/Application";
 import dynamic from "next/dynamic";
+import Script from "next/script";
 
 const DynamicFooter = dynamic(() => import("@/components/Footer/Footer"));
 const DynamicPopUp = dynamic(() => import("@/components/PopUp/PopUp"));
@@ -29,7 +30,7 @@ export const metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL),
   title: "Творча майстерня АРХІТРАВ",
   description:
-    "Архітекртура, проектування будівель, споруд та індивідуальних житлових будинків Україна. Проектна документація, Архітектурні решення, Проект будинку. АРХІТРАВ",
+    "Архітектура, проектування будівель, споруд та індивідуальних житлових будинків Україна. Проектна документація, Архітектурні решення, Проект будинку. АРХІТРАВ",
   keywords: [
     "Архітектурні решення",
     "Розробка ескізного проєкту",
@@ -92,10 +93,32 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Творча майстерня АРХІТРАВ",
+    image: "/favicon-16x16.png",
+    description: "Проектування будівель та споруд Україна",
+    image: "/favicon-32x32.png",
+    url: process.env.NEXT_PUBLIC_BASE_URL,
+    text: "Проектування будівель та споруд Україна. Хочете дізнатись більше, клікніть",
+    logo: "/apple-icon.png",
+    thumbnailUrl: "/favicon-16x16.png",
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer support",
+      telephone: "[+380503738460]",
+      email: "ppnaz@ukr.net",
+    },
+  };
   return (
     <html lang="uk">
       <body className={koho.className}>
         <SiteProvider>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
           <Header />
           <main>{children}</main>
           {/* <Footer caveat={caveat} /> */}
