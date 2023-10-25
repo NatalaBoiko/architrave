@@ -1,7 +1,7 @@
 "use client";
 
 import { SiteContext } from "@/context/SiteContext";
-import React, { useContext, useEffect } from "react";
+import React, { useCallback, useContext, useEffect } from "react";
 import styles from "./PopUp.module.scss";
 
 const PopUp = ({ children }) => {
@@ -25,18 +25,21 @@ const PopUp = ({ children }) => {
     }, 500);
   }
 
-  const onKeydown = (e) => {
-    if (isModalVisible && e.code === "Escape") {
-      // console.log(e.code);
-      setModalBackdrop(false);
+  const onKeydown = useCallback(
+    (e) => {
+      if (isModalVisible && e.code === "Escape") {
+        // console.log(e.code);
+        setModalBackdrop(false);
 
-      setTimeout(() => {
-        setModalVisible(false);
-      }, 500);
-    } else {
-      return;
-    }
-  };
+        setTimeout(() => {
+          setModalVisible(false);
+        }, 500);
+      } else {
+        return;
+      }
+    },
+    [isModalVisible, setModalBackdrop, setModalVisible]
+  );
 
   useEffect(() => {
     window.addEventListener("keydown", onKeydown);
