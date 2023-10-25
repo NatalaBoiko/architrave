@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useCallback } from "react";
 import Link from "next/link";
 import styles from "./HeaderLinks.module.scss";
 
@@ -11,31 +11,37 @@ import { SiteContext } from "@/context/SiteContext";
 export const HeaderLinks = () => {
   const { menuBtnOn, closeMenu, toggleMenu } = useContext(SiteContext);
 
-  const closeMenuByClicl = (e) => {
-    // console.log(e.target.nodeName);
-    // console.log(e.currentTarget);
-    if (e.target.nodeName !== "SECTION") {
-      return;
-    }
+  const closeMenuByClick = useCallback(
+    (e) => {
+      // console.log(e.target.nodeName);
+      // console.log(e.currentTarget);
+      if (e.target.nodeName !== "SECTION") {
+        return;
+      }
 
-    closeMenu();
-  };
+      closeMenu();
+    },
+    [closeMenu]
+  );
 
-  const onKeydown = (e) => {
-    // console.log(e.code);
-    if (e.code !== "Escape") return;
-    closeMenu();
-  };
+  const onKeydown = useCallback(
+    (e) => {
+      // console.log(e.code);
+      if (e.code !== "Escape") return;
+      closeMenu();
+    },
+    [closeMenu]
+  );
 
   useEffect(() => {
-    window.addEventListener("click", closeMenuByClicl);
+    window.addEventListener("click", closeMenuByClick);
     window.addEventListener("keydown", onKeydown);
 
     return () => {
-      window.removeEventListener("click", closeMenuByClicl);
+      window.removeEventListener("click", closeMenuByClick);
       window.removeEventListener("keydown", onKeydown);
     };
-  }, [closeMenuByClicl, onKeydown]);
+  }, [closeMenuByClick, onKeydown]);
 
   useEffect(() => {
     if (menuBtnOn) {
