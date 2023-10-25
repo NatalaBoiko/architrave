@@ -40,7 +40,7 @@ export const metadata = {
     "Проект будинку",
     "АРХІТРАВ",
   ],
-  themeColor: "#161616",
+  themeColor: "#171717",
   icons: {
     shortcut: "/favicon.ico",
     apple: "/apple-icon.png",
@@ -83,6 +83,12 @@ export const metadata = {
     locale: "en_GB",
     type: "website",
   },
+  author: "Творча майстерня АРХІТРАВ",
+  generator: "Творча майстерня АРХІТРАВ",
+  applicationName: "Творча майстерня АРХІТРАВ",
+  referrer: "origin-when-cross-origin",
+  creator: "Творча майстерня АРХІТРАВ",
+  publisher: "Творча майстерня АРХІТРАВ",
 };
 
 export default function RootLayout({ children }) {

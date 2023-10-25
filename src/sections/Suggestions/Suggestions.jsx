@@ -15,10 +15,7 @@ const Suggestions = () => {
                 src={src}
                 alt={alt}
                 fill={true}
-                sizes="(min-width: 426px ) 50vw,
-                (min-width: 768px) 33vw,
-                (min-width: 976px) 25vw,
-                100vw"
+                sizes="(min-width: 440px) 304px, 150px"
               />
               <h3>{title}</h3>
             </li>
