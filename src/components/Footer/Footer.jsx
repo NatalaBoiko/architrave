@@ -8,7 +8,7 @@ const Footer = ({ caveat }) => {
       <Link
         href="https://webevery.dev/"
         target="_blank"
-        rel="noopener noreferrer"
+        // rel="noopener noreferrer"
         className={caveat.className}
       >
         webevery.dev

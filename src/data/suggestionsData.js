@@ -2,6 +2,7 @@ export const suggestionsData = [
   {
     id: "1",
     src: "https://res.cloudinary.com/dtelxxva7/image/upload/v1689181688/archi-suggestions/1_nyhy8c.png",
+    public_id: "1_nyhy8c",
     alt: "Офісні будівлі Архітрав",
     title: "Офісні будівлі",
   },

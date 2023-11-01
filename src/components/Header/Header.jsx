@@ -34,6 +34,7 @@ const Header = () => {
       >
         <Image
           src="/logo.png"
+          priority={true}
           fill={true}
           alt="logo Архітрав"
           className={styles.logo}

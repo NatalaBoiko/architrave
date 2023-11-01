@@ -78,7 +78,7 @@ export const metadata = {
   openGraph: {
     title: "Творча майстерня АРХІТРАВ",
     description:
-      "Хочете дізнатись про стадії проектування будинків, будівель і споруд? - Переходьте!",
+      "Потрібен проект особняка, будинку чи споруди? - Переходьте на сайт!",
     url: process.env.NEXT_PUBLIC_BASE_URL,
     siteName: "Творча майстерня АРХІТРАВ",
     locale: "en_GB",
@@ -101,7 +101,7 @@ export default function RootLayout({ children }) {
     description: "Проектування будівель та споруд Україна",
     image: "/favicon-32x32.png",
     url: process.env.NEXT_PUBLIC_BASE_URL,
-    text: "Проектування будівель та споруд Україна. Хочете дізнатись більше, клікніть",
+    text: "Проектування будівель та споруд Україна. Хочете дізнатись більше - клікніть",
     logo: "/apple-icon.png",
     thumbnailUrl: "/favicon-16x16.png",
     contactPoint: {
@@ -121,14 +121,10 @@ export default function RootLayout({ children }) {
           />
           <Header />
           <main>{children}</main>
-          {/* <Footer caveat={caveat} /> */}
           <DynamicFooter caveat={caveat} />
-          {/* <PopUp> */}
           <DynamicPopUp>
-            {/* <Application /> */}
             <DynamicApplication />
           </DynamicPopUp>
-          {/* </PopUp> */}
         </SiteProvider>
       </body>
     </html>
