@@ -31,7 +31,7 @@ export const GalleryItem = () => {
     if (url) {
       return (
         <SwiperSlide key={id}>
-          <Image src={url} alt="Архітрав галерея" width={300} height={300} />
+          <Image src={url} alt="Архітрав галерея" width={300} height={300} sizes="50vw" />
         </SwiperSlide>
       );
     } else {
