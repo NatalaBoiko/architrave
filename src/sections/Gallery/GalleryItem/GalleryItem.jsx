@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { galleryData } from "@/data/galleryData";
 import Image from "next/image";
@@ -13,6 +13,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "swiper/css/free-mode";
+import "swiper/css/thumbs";
 import "./styles.css";
 
 // import required modules
@@ -23,45 +25,56 @@ import {
   Thumbs,
   FreeMode,
 } from "swiper/modules";
+import { CldImage } from "next-cloudinary";
 
 export const GalleryItem = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
-  const item = galleryData.map(({ id, url }) => {
-    if (url) {
-      return (
-        <SwiperSlide key={id}>
-          <Image src={url} alt="Архітрав галерея" width={300} height={300} />
-        </SwiperSlide>
-      );
-    } else {
-      return;
-    }
+  const item = galleryData?.map(({ id, url }) => {
+    return (
+      <SwiperSlide key={id}>
+        <CldImage src={url} alt="Архітрав галерея" fill={true} sizes="50vw" />
+      </SwiperSlide>
+    );
   });
+
+  const handleThumbsSwiper = (swiper) => {
+    if (swiper !== null) {
+      setThumbsSwiper(swiper);
+    }
+  };
+
+  useEffect(() => {
+    handleThumbsSwiper;
+  }, []);
+
   return (
     <div className={styles.swiperContainer}>
       <Swiper
-        modules={[FreeMode, Navigation, Thumbs, Keyboard]}
-        loop={true}
         style={{
           "--swiper-navigation-color": "#fff",
           "--swiper-pagination-color": "#fff",
         }}
+        loop={true}
         spaceBetween={10}
         navigation={true}
         thumbs={{ swiper: thumbsSwiper }}
+        modules={[FreeMode, Navigation, Thumbs, Keyboard]}
         className="mySwiper2"
       >
         {item}
       </Swiper>
       <Swiper
-        modules={[FreeMode, Navigation, Thumbs, Mousewheel, Keyboard]}
-        onSwiper={setThumbsSwiper}
+        // onSwiper={setThumbsSwiper}
+        // onSwiper={handleThumbsSwiper}
+        onClick={handleThumbsSwiper}
+        loop={true}
         spaceBetween={10}
         slidesPerView={4}
         mousewheel={true}
         freeMode={true}
         watchSlidesProgress={true}
+        modules={[FreeMode, Navigation, Thumbs, Mousewheel, Keyboard]}
         className="mySwiper"
       >
         {item}
@@ -69,19 +82,3 @@ export const GalleryItem = () => {
     </div>
   );
 };
-
-// export const GalleryItem = async () => {
-//   console.log(galleryData);
-// export const item = await galleryData.map(({ id, url }) => {
-//   if (url) {
-//     return (
-//       <li key={id} className={styles.item}>
-//         <Image src={url} alt="qwe" fill={true} />
-//       </li>
-//     );
-//   } else {
-//     return;
-//   }
-// });
-//   return <>{item}</>;
-// };

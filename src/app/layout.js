@@ -41,7 +41,7 @@ export const metadata = {
     "Проект будинку",
     "АРХІТРАВ",
   ],
-  themeColor: "#171717",
+  // themeColor: "#171717", // occurs warning: Unsupported metadata themeColor is configured in metadata export. Please move it to viewport export instead.
   icons: {
     shortcut: "/favicon.ico",
     apple: "/apple-icon.png",
