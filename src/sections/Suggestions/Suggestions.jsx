@@ -8,7 +8,7 @@ const Suggestions = () => {
     <section id="suggestions" className={styles.suggestions}>
       <h2>Наші пропозиції</h2>
       <ul className={styles.suggestionsList}>
-        {suggestionsData.map(({ id, src, public_id, alt, title }) => {
+        {suggestionsData.map(({ id, src, alt, title }) => {
           return (
             <li key={id}>
               <Image
@@ -16,6 +16,7 @@ const Suggestions = () => {
                 alt={alt}
                 fill={true}
                 sizes="(min-width: 440px) 304px, 150px"
+                title={title}
               />
 
               <h3>{title}</h3>

@@ -1,13 +1,11 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-
-import { galleryData } from "@/data/galleryData";
-import Image from "next/image";
 import styles from "./GalleryItem.module.scss";
+import { item } from "./Item";
 
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
@@ -49,24 +47,6 @@ export const GalleryItem = () => {
       window.removeEventListener("resize", updateSlidesPerView);
     };
   }, []);
-
-  const item = galleryData.map(({ id, url }) => {
-    if (url) {
-      return (
-        <SwiperSlide key={id}>
-          <Image
-            src={url}
-            alt="Архітрав галерея"
-            width={300}
-            height={300}
-            sizes="50vw"
-          />
-        </SwiperSlide>
-      );
-    } else {
-      return;
-    }
-  });
 
   return (
     <div className={styles.swiperContainer}>
