@@ -8,13 +8,7 @@ const PopUp = ({ children }) => {
   const { isModalVisible, setModalVisible, modalBackdrop, setModalBackdrop } =
     useContext(SiteContext);
 
-  // isModalVisible
-  //   ? (document.body.style.overflow = "hidden")
-  //   : (document.body.style.overflow = "auto");
-
   function closeModal(e) {
-    // console.log(e.target);
-    // console.log(e.currentTarget);
     if (e.target !== e.currentTarget) {
       return;
     }
@@ -28,7 +22,6 @@ const PopUp = ({ children }) => {
   const onKeydown = useCallback(
     (e) => {
       if (isModalVisible && e.code === "Escape") {
-        // console.log(e.code);
         setModalBackdrop(false);
 
         setTimeout(() => {
