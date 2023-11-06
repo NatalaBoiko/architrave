@@ -18,17 +18,11 @@ const DynamicToTopBtn = dynamic(() => import("@/components/ToTopBtn/ToTopBtn"));
 export default function Home() {
   return (
     <>
-      {/* <Hero /> */}
       <DynamicHero />
-      {/* <About /> */}
       <DynamicAbout />
-      {/* <Suggestions /> */}
       <DynamicSuggestions />
-      {/* <Gallery /> */}
       <DynamicGallery />
-      {/* <Contacts /> */}
       <DynamicContacts />
-      {/* <ToTopBtn /> */}
       <DynamicToTopBtn />
     </>
   );

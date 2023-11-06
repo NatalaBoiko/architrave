@@ -1,5 +1,4 @@
 import { suggestionsData } from "@/data/suggestionsData";
-import { CldImage } from "next-cloudinary";
 import Image from "next/image";
 import React from "react";
 import styles from "./Suggestions.module.scss";
@@ -18,12 +17,7 @@ const Suggestions = () => {
                 fill={true}
                 sizes="(min-width: 440px) 304px, 150px"
               />
-              {/* <CldImage
-                src={public_id}
-                alt={alt}
-                fill={true}
-                sizes="(min-width: 440px) 304px, 150px"
-              /> */}
+
               <h3>{title}</h3>
             </li>
           );

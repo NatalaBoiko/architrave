@@ -26,10 +26,7 @@ const About = () => {
             alt="skyscraper Архітрав"
             fill={true}
             className={styles.aboutImg}
-            sizes="50vw"
-            style={{
-              objectFit: "cover",
-            }}
+            sizes="(min-width: 780px) 580px, (min-width: 460px) 360px, calc(85vw - 14px)"
           />
         </div>
       </div>
