@@ -1,114 +1,86 @@
 .about {
   display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
-  padding-top: 24px;
-  padding-bottom: 24px;
+  gap: 24px;
+  padding: 24px 16px;
   @media screen and (min-width: 768px) {
-    width: 1440px;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding: 40px 32px;
+    gap: 40px;
   }
 }
 
 .aboutTitle {
-  font-size: 16px;
+  font-size: clamp(16px, 5vw, 48px);
   font-weight: 600;
   letter-spacing: 0.64px;
-  text-align: center;
   color: var(--dark_fonf_color);
-  margin-bottom: 24px;
-  min-width: 64px;
-  @media screen and (min-width: 768px) {
-    font-size: 48px;
-    letter-spacing: 1.92px;
-    margin-bottom: 40px;
-
-    @media screen and (min-width: 1224px) {
-      text-align: start;
-      letter-spacing: 1.92px;
-    }
-  }
 }
 
+.aboutTextPosition,
 .aboutContent {
   width: 100%;
-  margin-bottom: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 24px;
+
   @media screen and (min-width: 768px) {
-    margin-bottom: 40px;
-    @media screen and (min-width: 1224px) {
-      display: flex;
-      flex-direction: row;
-    }
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 40px;
+    width: 700px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    gap: 56px;
+    width: 900px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    gap: 100px;
+    width: 1200px;
   }
 }
 
 .aboutText {
-  text-align: justify;
   color: var(--dark_fonf_color);
   font-size: 12px;
+
+  font-style: normal;
   font-weight: 400;
-  line-height: 180%;
+  line-height: 1.8;
   letter-spacing: 0.66px;
-
-  margin-bottom: 24px;
+  text-align: justify;
 
   @media screen and (min-width: 768px) {
+    flex: 1;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  @media screen and (min-width: 1024px) {
+    line-height: 1.8;
+  }
+
+  @media screen and (min-width: 1440px) {
     font-size: 24px;
-    font-weight: 500;
-    letter-spacing: 1.32px;
-
-    &:not(:last-child) {
-      margin-bottom: 40px;
-    }
-  }
-  @media screen and (min-width: 1224px) {
-    &:not(:last-child) {
-      margin-right: 105px;
-    }
-  }
-}
-.aboutTextItem {
-  max-width: 390px;
-  @media screen and (min-width: 768px) {
-    max-width: 752px;
-  }
-  @media screen and (min-width: 1224px) {
-    max-width: 493px;
-  }
-}
-.aboutTextPosition {
-  max-width: 390px;
-  @media screen and (min-width: 768px) {
-    max-width: 752px;
-  }
-
-  @media screen and (min-width: 1224px) {
-    max-width: 100%;
+    line-height: 1.6;
   }
 }
 
 .aboutImgContainer {
-  width: 360px;
-  height: 327px;
   position: relative;
-
-  border-radius: 24px;
+  width: 300px;
+  height: 328px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-
-  @media screen and (max-width: 425px) {
-    width: 90%;
-  }
-
   @media screen and (min-width: 768px) {
-    width: 580px;
-    height: 602px;
+    flex: 1;
+    height: 340px;
   }
-}
 
-.aboutImg {
-  object-fit: cover;
+  @media screen and (min-width: 1440px) {
+    height: 452px;
+  }
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { galleryData } from "@/data/galleryData";
 import Image from "next/image";
@@ -26,18 +26,48 @@ import {
 
 export const GalleryItem = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [slidesPerView, setSlidesPerView] = useState(0);
+
+  // Function to update slidesPerView based on viewport width
+  const updateSlidesPerView = () => {
+    if (window.innerWidth < 1500) {
+      setSlidesPerView(4);
+    } else {
+      setSlidesPerView(5); // Default value for larger screens
+    }
+  };
+
+  // Initial setup
+  useEffect(() => {
+    updateSlidesPerView();
+
+    // Add an event listener to update slidesPerView when the window is resized
+    window.addEventListener("resize", updateSlidesPerView);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("resize", updateSlidesPerView);
+    };
+  }, []);
 
   const item = galleryData.map(({ id, url }) => {
     if (url) {
       return (
         <SwiperSlide key={id}>
-          <Image src={url} alt="Архітрав галерея" width={300} height={300} sizes="50vw" />
+          <Image
+            src={url}
+            alt="Архітрав галерея"
+            width={300}
+            height={300}
+            sizes="50vw"
+          />
         </SwiperSlide>
       );
     } else {
       return;
     }
   });
+
   return (
     <div className={styles.swiperContainer}>
       <Swiper
@@ -58,7 +88,7 @@ export const GalleryItem = () => {
         modules={[FreeMode, Navigation, Thumbs, Mousewheel, Keyboard]}
         onSwiper={setThumbsSwiper}
         spaceBetween={10}
-        slidesPerView={4}
+        slidesPerView={slidesPerView}
         mousewheel={true}
         freeMode={true}
         watchSlidesProgress={true}
@@ -69,19 +99,3 @@ export const GalleryItem = () => {
     </div>
   );
 };
-
-// export const GalleryItem = async () => {
-//   console.log(galleryData);
-// export const item = await galleryData.map(({ id, url }) => {
-//   if (url) {
-//     return (
-//       <li key={id} className={styles.item}>
-//         <Image src={url} alt="qwe" fill={true} />
-//       </li>
-//     );
-//   } else {
-//     return;
-//   }
-// });
-//   return <>{item}</>;
-// };
