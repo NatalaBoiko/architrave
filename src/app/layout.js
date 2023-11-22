@@ -101,9 +101,7 @@ export default function RootLayout({ children }) {
     description: "Проектування будівель та споруд Україна",
     image: "/favicon-32x32.png",
     url: process.env.NEXT_PUBLIC_BASE_URL,
-    text: "Проектування будівель та споруд Україна. Хочете дізнатись більше, клікніть",
     logo: "/apple-icon.png",
-    thumbnailUrl: "/favicon-16x16.png",
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer support",

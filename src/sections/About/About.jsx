@@ -20,7 +20,7 @@ const About = () => {
           сприйняття краси, щоб створити проект, який відображатиме вашу
           унікальну особистість та стиль.
         </p>
-        <div className={styles.aboutImgContainer}>
+        <figure className={styles.aboutImgContainer}>
           <Image
             src="/skyscraper.webp"
             alt="skyscraper Архітрав"
@@ -28,7 +28,7 @@ const About = () => {
             className={styles.aboutImg}
             sizes="(min-width: 780px) 580px, (min-width: 460px) 360px, calc(85vw - 14px)"
           />
-        </div>
+        </figure>
       </div>
 
       <p className={`${styles.aboutText} ${styles.aboutTextPosition}`}>
