@@ -6,7 +6,7 @@ const About = () => {
   return (
     <section className={styles.about} id="about">
       <h2 className={styles.aboutTitle}>Про нас</h2>
-      <div className={styles.aboutContent}>
+      <article className={styles.aboutContent}>
         <p className={`${styles.aboutText} ${styles.aboutTextItem}`}>
           Наша мета - перетворити ваші мрії у реальність шляхом створення
           функціональних, естетичних та стильних будівель.
@@ -26,10 +26,13 @@ const About = () => {
             alt="skyscraper Архітрав"
             fill={true}
             className={styles.aboutImg}
-            sizes="(min-width: 780px) 580px, (min-width: 460px) 360px, calc(85vw - 14px)"
+            sizes="50vw"
+            style={{
+              objectFit: "cover",
+            }}
           />
         </figure>
-      </div>
+      </article>
 
       <p className={`${styles.aboutText} ${styles.aboutTextPosition}`}>
         Ми пропонуємо широкий спектр послуг, які охоплюють усі етапи

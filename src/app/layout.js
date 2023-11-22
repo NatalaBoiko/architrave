@@ -78,7 +78,7 @@ export const metadata = {
   openGraph: {
     title: "Творча майстерня АРХІТРАВ",
     description:
-      "Хочете дізнатись про стадії проектування будинків, будівель і споруд? - Переходьте!",
+      "Потрібен проект особняка, будинку чи споруди? - Переходьте на сайт!",
     url: process.env.NEXT_PUBLIC_BASE_URL,
     siteName: "Творча майстерня АРХІТРАВ",
     locale: "en_GB",
@@ -90,6 +90,22 @@ export const metadata = {
   referrer: "origin-when-cross-origin",
   creator: "Творча майстерня АРХІТРАВ",
   publisher: "Творча майстерня АРХІТРАВ",
+  appLinks: {
+    ios: {
+      url: process.env.NEXT_PUBLIC_BASE_URL,
+      app_name: "АРХІТРАВ",
+    },
+    android: {
+      url: process.env.NEXT_PUBLIC_BASE_URL,
+      package: process.env.NEXT_PUBLIC_BASE_URL,
+      app_name: "АРХІТРАВ",
+    },
+    web: {
+      url: process.env.NEXT_PUBLIC_BASE_URL,
+      should_fallback: true,
+    },
+  },
+  assets: [process.env.NEXT_PUBLIC_BASE_URL],
 };
 
 export default function RootLayout({ children }) {
@@ -119,14 +135,10 @@ export default function RootLayout({ children }) {
           />
           <Header />
           <main>{children}</main>
-          {/* <Footer caveat={caveat} /> */}
           <DynamicFooter caveat={caveat} />
-          {/* <PopUp> */}
           <DynamicPopUp>
-            {/* <Application /> */}
             <DynamicApplication />
           </DynamicPopUp>
-          {/* </PopUp> */}
         </SiteProvider>
       </body>
     </html>

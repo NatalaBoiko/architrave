@@ -13,8 +13,6 @@ export const HeaderLinks = () => {
 
   const closeMenuByClick = useCallback(
     (e) => {
-      // console.log(e.target.nodeName);
-      // console.log(e.currentTarget);
       if (e.target.nodeName !== "SECTION") {
         return;
       }

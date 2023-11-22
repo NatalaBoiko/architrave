@@ -34,6 +34,7 @@ const ToTopBtn = ({ id }) => {
       onClick={scrollToTop}
       className={isVisible ? styles.toTopBtn : styles.toTopBtnHidden}
       title="Кнопка до верху сторінки"
+      aria-label="Кнопка до гори"
     >
       <svg>
         <use href="./sprite.svg#icon-circle-up"></use>

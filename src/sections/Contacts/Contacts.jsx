@@ -5,38 +5,35 @@ const Contacts = () => {
   return (
     <section id="contacts" className={styles.contacts}>
       <h2 className={styles.contactsTitle}>Контакти</h2>
-      <div className={styles.contactsContent}>
+      <article className={styles.contactsContent}>
         <address className={styles.contactsList}>
           <div className={styles.contactsAdressContainer}>
             <a href="tel:+380503738460" className={styles.contactsAdress}>
-              <div className={styles.contactsIcon}>
+              <figure className={styles.contactsIcon}>
                 <svg className={styles.icon}>
                   <use href="/sprite.svg#icon-telArchitrave" />
                 </svg>
-              </div>
+              </figure>
               +380503738460
             </a>
           </div>
           <div className={styles.contactsAdressContainer}>
-            <a
-              href="mailto:ppnaz@ukr.net"
-              className={styles.contactsAdress}
-            >
-              <div className={styles.contactsIcon}>
+            <a href="mailto:ppnaz@ukr.net" className={styles.contactsAdress}>
+              <figure className={styles.contactsIcon}>
                 <svg className={styles.icon}>
                   <use href="/sprite.svg#icon-emailArchitrave" />
                 </svg>
-              </div>
-            ppnaz@ukr.net
+              </figure>
+              ppnaz@ukr.net
             </a>
           </div>
           <div className={styles.contactsAdressContainer}>
             <div className={styles.contactsAdress}>
-              <div className={styles.contactsIcon}>
+              <figure className={styles.contactsIcon}>
                 <svg className={styles.icon}>
                   <use href="/sprite.svg#icon-locationArchitrave" />
                 </svg>
-              </div>
+              </figure>
               м. Івано-Франківськ, вул. Манюха, 19
             </div>
           </div>
@@ -52,7 +49,7 @@ const Contacts = () => {
             title="Адреса на мапі"
           ></iframe>
         </div>
-      </div>
+      </article>
     </section>
   );
 };

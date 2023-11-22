@@ -80,7 +80,6 @@
   & span {
     font-weight: bolder;
     font-size: 20px;
-    // font-size: clamp(1.25rem, 0.464rem + 3.929vw, 4rem);
     @media screen and (min-width: 768px) {
       font-size: 64px;
       letter-spacing: 0.96px;
@@ -183,58 +182,3 @@
     opacity: 1;
   }
 }
-
-// .loader {
-//   position: relative;
-// }
-// .loader::before {
-//   content: "";
-//   position: absolute;
-//   top: 0;
-//   right: 0;
-//   height: 100%;
-//   width: 2px;
-//   height: 100%;
-//   background: aqua;
-//   animation: cursor 0.8s steps(3) infinite, des 10s linear forwards;
-// }
-// @keyframes cursor {
-//   0%,
-//   50% {
-//     opacity: 1;
-//   }
-//   51%,
-//   100% {
-//     opacity: 0;
-//   }
-// }
-
-// @keyframes des {
-//   0% {
-//     display: inline-block;
-//   }
-//   99% {
-//     display: inline-block;
-//   }
-//   100% {
-//     display: none;
-//   }
-// }
-
-// .loader h2 {
-//   position: relative;
-//   color: aqua;
-//   text-transform: uppercase;
-//   animation: typing 5s steps(10) forwards;
-//   overflow: hidden;
-// }
-
-// @keyframes typing {
-//   0% {
-//     width: 0;
-//   }
-
-//   100% {
-//     width: 110.86px;
-//   }
-// }
