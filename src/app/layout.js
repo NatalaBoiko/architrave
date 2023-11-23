@@ -90,6 +90,22 @@ export const metadata = {
   referrer: "origin-when-cross-origin",
   creator: "Творча майстерня АРХІТРАВ",
   publisher: "Творча майстерня АРХІТРАВ",
+  appLinks: {
+    ios: {
+      url: process.env.NEXT_PUBLIC_BASE_URL,
+      app_name: "АРХІТРАВ",
+    },
+    android: {
+      url: process.env.NEXT_PUBLIC_BASE_URL,
+      package: process.env.NEXT_PUBLIC_BASE_URL,
+      app_name: "АРХІТРАВ",
+    },
+    web: {
+      url: process.env.NEXT_PUBLIC_BASE_URL,
+      should_fallback: true,
+    },
+  },
+  assets: [process.env.NEXT_PUBLIC_BASE_URL],
 };
 
 export default function RootLayout({ children }) {
@@ -101,9 +117,7 @@ export default function RootLayout({ children }) {
     description: "Проектування будівель та споруд Україна",
     image: "/favicon-32x32.png",
     url: process.env.NEXT_PUBLIC_BASE_URL,
-    text: "Проектування будівель та споруд Україна. Хочете дізнатись більше - клікніть",
     logo: "/apple-icon.png",
-    thumbnailUrl: "/favicon-16x16.png",
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer support",
