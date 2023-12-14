@@ -6,7 +6,6 @@ import { SiteProvider } from "@/context/SiteContext";
 // import PopUp from "@/components/PopUp/PopUp";
 // import Application from "@/components/PopUp/Application/Application";
 import dynamic from "next/dynamic";
-import Script from "next/script";
 
 const DynamicFooter = dynamic(() => import("@/components/Footer/Footer"));
 const DynamicPopUp = dynamic(() => import("@/components/PopUp/PopUp"));
@@ -81,12 +80,35 @@ export const metadata = {
       "Потрібен проект особняка, будинку чи споруди? - Переходьте на сайт!",
     url: process.env.NEXT_PUBLIC_BASE_URL,
     siteName: "Творча майстерня АРХІТРАВ",
-    locale: "en_GB",
+    images: [
+      {
+        url: "/opengraph-image-400x300.jpg",
+        type: "image/jpg",
+        width: 400,
+        height: 300,
+        alt: "АРХІТРАВ",
+      },
+      {
+        url: "/twitter-image-800x600.jpg",
+        type: "image/jpg",
+        width: 800,
+        height: 600,
+        alt: "АРХІТРАВ",
+      },
+      {
+        url: "/opengraph-image-1200x630.jpg",
+        type: "image/jpg",
+        width: 1200,
+        height: 630,
+        alt: "АРХІТРАВ",
+      },
+    ],
+    locale: "uk-UA",
     type: "website",
   },
   author: "Творча майстерня АРХІТРАВ",
   generator: "Творча майстерня АРХІТРАВ",
-  applicationName: "Творча майстерня АРХІТРАВ",
+  applicationName: "АРХІТРАВ",
   referrer: "origin-when-cross-origin",
   creator: "Творча майстерня АРХІТРАВ",
   publisher: "Творча майстерня АРХІТРАВ",
@@ -110,23 +132,22 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
+    "@context": "http://schema.org",
+    "@type": "LocalBusiness",
     name: "Творча майстерня АРХІТРАВ",
-    image: "/favicon-16x16.png",
-    description: "Проектування будівель та споруд Україна",
-    image: "/favicon-32x32.png",
-    url: process.env.NEXT_PUBLIC_BASE_URL,
-    logo: "/apple-icon.png",
-    contactPoint: {
-      "@type": "ContactPoint",
-      contactType: "customer support",
-      telephone: "[+380503738460]",
-      email: "ppnaz@ukr.net",
+    image: "/архітрав.jpg",
+    telephone: "+380503738460",
+    email: "ppnaz@ukr.net",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "вул. Манюха, 19",
+      addressLocality: "м. Івано-Франківськ",
+      addressCountry: "Україна",
+      postalCode: "76000",
     },
   };
   return (
-    <html lang="uk">
+    <html lang="uk-UA">
       <body className={koho.className}>
         <SiteProvider>
           <script
