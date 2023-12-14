@@ -6,6 +6,7 @@ import { SiteProvider } from "@/context/SiteContext";
 // import PopUp from "@/components/PopUp/PopUp";
 // import Application from "@/components/PopUp/Application/Application";
 import dynamic from "next/dynamic";
+import Script from "next/script";
 
 const DynamicFooter = dynamic(() => import("@/components/Footer/Footer"));
 const DynamicPopUp = dynamic(() => import("@/components/PopUp/PopUp"));
@@ -130,8 +131,26 @@ export const metadata = {
   assets: [process.env.NEXT_PUBLIC_BASE_URL],
 };
 
-export default function RootLayout({ children }) {
-  const jsonLd = {
+const dataSchema = [
+  {
+    id: "Organization",
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Творча майстерня АРХІТРАВ",
+    image: "/favicon-16x16.png",
+    description: "Проектування будівель та споруд Україна",
+    image: "/favicon-32x32.png",
+    url: process.env.NEXT_PUBLIC_BASE_URL,
+    logo: "/apple-icon.png",
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer support",
+      telephone: "+380503738460",
+      email: "ppnaz@ukr.net",
+    },
+  },
+  {
+    id: "LocalBusiness",
     "@context": "http://schema.org",
     "@type": "LocalBusiness",
     name: "Творча майстерня АРХІТРАВ",
@@ -145,7 +164,28 @@ export default function RootLayout({ children }) {
       addressCountry: "Україна",
       postalCode: "76000",
     },
-  };
+  },
+];
+
+export default function RootLayout({ children }) {
+  // const jsonLd = {
+  //   "@context": "http://schema.org",
+  //   "@type": "LocalBusiness",
+  //   name: "Творча майстерня АРХІТРАВ",
+  //   image: "/архітрав.jpg",
+  //   telephone: "+380503738460",
+  //   email: "ppnaz@ukr.net",
+  //   address: {
+  //     "@type": "PostalAddress",
+  //     streetAddress: "вул. Манюха, 19",
+  //     addressLocality: "м. Івано-Франківськ",
+  //     addressCountry: "Україна",
+  //     postalCode: "76000",
+  //   },
+  // };
+
+  const jsonLd = dataSchema.map((el) => el);
+
   return (
     <html lang="uk-UA">
       <body className={koho.className}>
