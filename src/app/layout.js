@@ -6,7 +6,6 @@ import { SiteProvider } from "@/context/SiteContext";
 // import PopUp from "@/components/PopUp/PopUp";
 // import Application from "@/components/PopUp/Application/Application";
 import dynamic from "next/dynamic";
-import Script from "next/script";
 
 const DynamicFooter = dynamic(() => import("@/components/Footer/Footer"));
 const DynamicPopUp = dynamic(() => import("@/components/PopUp/PopUp"));
@@ -168,22 +167,6 @@ const dataSchema = [
 ];
 
 export default function RootLayout({ children }) {
-  // const jsonLd = {
-  //   "@context": "http://schema.org",
-  //   "@type": "LocalBusiness",
-  //   name: "Творча майстерня АРХІТРАВ",
-  //   image: "/архітрав.jpg",
-  //   telephone: "+380503738460",
-  //   email: "ppnaz@ukr.net",
-  //   address: {
-  //     "@type": "PostalAddress",
-  //     streetAddress: "вул. Манюха, 19",
-  //     addressLocality: "м. Івано-Франківськ",
-  //     addressCountry: "Україна",
-  //     postalCode: "76000",
-  //   },
-  // };
-
   const jsonLd = dataSchema.map((el) => el);
 
   return (
