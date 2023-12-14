@@ -160,8 +160,6 @@ const dataSchema = [
       "@type": "PostalAddress",
       streetAddress: "вул. Манюха, 19",
       addressLocality: "м. Івано-Франківськ",
-      addressCountry: "Україна",
-      postalCode: "76000",
     },
   },
 ];
