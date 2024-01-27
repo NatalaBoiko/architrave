@@ -28,7 +28,13 @@ export const GalleryItem = () => {
 
   // Function to update slidesPerView based on viewport width
   const updateSlidesPerView = () => {
-    if (window.innerWidth < 1500) {
+    // if (window.innerWidth < 1280) {
+    //   setSlidesPerView(4);
+    // } else
+
+    if (window.innerHeight < 500 && window.innerWidth < 1280) {
+      setSlidesPerView(5);
+    } else if (window.innerWidth < 1280) {
       setSlidesPerView(4);
     } else {
       setSlidesPerView(5); // Default value for larger screens
@@ -60,7 +66,7 @@ export const GalleryItem = () => {
         spaceBetween={10}
         navigation={true}
         thumbs={{ swiper: thumbsSwiper }}
-        className="mySwiper2"
+        className="mySwiperTop"
       >
         {item}
       </Swiper>
@@ -72,7 +78,7 @@ export const GalleryItem = () => {
         mousewheel={true}
         freeMode={true}
         watchSlidesProgress={true}
-        className="mySwiper"
+        className="mySwiperBottom"
       >
         {item}
       </Swiper>

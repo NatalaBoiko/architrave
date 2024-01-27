@@ -1,18 +1,16 @@
 .swiperContainer {
-  height: 300px;
+  width: 100%;
 
   -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.13);
   -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.13);
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.13);
   border: 10px solid var(--light_fonf_color);
-  @media screen and (min-width: 426px) {
-    height: 500px;
-  }
-  @media screen and (min-width: 1025px) {
-    height: 600px;
+
+  @media screen and (orientation: landscape) {
+    height: 100%;
   }
 
-  @media screen and (min-width: 1500px) {
-    width: 1360px;
+  @media screen and (orientation: portrait) {
+    height: 80vw;
   }
 }

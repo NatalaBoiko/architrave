@@ -2,6 +2,7 @@ import React from "react";
 import { galleryData } from "@/data/galleryData";
 import { SwiperSlide } from "swiper/react";
 import Image from "next/image";
+import styles from "./GalleryItem.module.scss";
 
 export const item = galleryData.map(({ id, url }) => {
   if (url) {
@@ -13,6 +14,7 @@ export const item = galleryData.map(({ id, url }) => {
           width={300}
           height={300}
           sizes="50vw"
+          // className={styles.swiperImg}
         />
       </SwiperSlide>
     );
